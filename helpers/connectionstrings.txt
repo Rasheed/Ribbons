@@ -1,0 +1,1 @@
+Database=ribbonsAynsllpZX;Data Source=eu-cdbr-azure-north-b.cloudapp.net;User Id=ba33e577d25ffb;Password=60f20d6c
