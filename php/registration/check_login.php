@@ -11,4 +11,5 @@ if($_POST['action'] == "check_login") {
   $users = $stmt->fetchAll(); 
   echo json_encode($users);
 }
+mysql_close($conn);
 ?>
