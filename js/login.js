@@ -18,9 +18,7 @@ $(function(){
       }
     }); // end ajax call
   });
-});
-
-var username = false;
+  var username = false;
 var password = false;
 $("#username").on("input", function() {
   if ( $(this).val().length > 0){
@@ -61,3 +59,5 @@ $("#password").on("input", function() {
     $('.login').removeClass('buttonafter');
   }
 });
+});
+
