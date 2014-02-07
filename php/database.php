@@ -5,6 +5,7 @@ class Database
 	private $user = "ba33e577d25ffb";
 	private $pwd = "60f20d6c";
 	private $db = "ribbonsAynsllpZX";
+	
 	public function init(){
 	$conn = "";
     // Connect to database.
