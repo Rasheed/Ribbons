@@ -1,8 +1,8 @@
 $(function() {
   $('#login').on('click', function(e) {
     e.preventDefault();
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
+    var username = document.getElementById("#username").value;
+    var password = document.getElementById("#password").value;
     // Regex needs to be checked. 
     var emailreg = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
 
