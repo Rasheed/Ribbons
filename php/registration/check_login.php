@@ -2,7 +2,9 @@
 include("../database.php");
 $DB = new Database();
 $conn = $DB->init();
-if($_POST['action'] == "check_login") {
+echo json_encode($_POST);
+if(isset($_POST['username'], $_POST['password'])) {
+#AboutMe, Birthday, FirstName, LastName, Email, Password, Gender)
   $username = $_POST['username'];
   $password = $_POST['password'];
   
@@ -10,6 +12,7 @@ if($_POST['action'] == "check_login") {
   $stmt = $conn->query($sql_select);
   $users = $stmt->fetchAll(); 
   echo json_encode($users);
+} else{
+	echo "error";
 }
-mysql_close($conn);
 ?>
