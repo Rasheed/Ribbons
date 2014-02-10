@@ -1,28 +1,12 @@
 <?php
-	$url = "http://localhost/php/registration/check_login.php";
-
-    $content = array("username"=>"user@test.com");
-
-    $curl = curl_init($url);
-    curl_setopt($curl, CURLOPT_HEADER, false);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($curl, CURLOPT_HTTPHEADER,
-        array("Content-type: application/json"));
-    curl_setopt($curl, CURLOPT_POST, true);
-    curl_setopt($curl, CURLOPT_POSTFIELDS, $content);
-
-    $json_response = curl_exec($curl);
-
-    $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
-    if ( $status != 201 ) {
-        die("Error: call to URL $url failed with status $status, response $json_response, curl_error " . curl_error($curl) . ", curl_errno " . curl_errno($curl));
-    }
-
-
-    curl_close($curl);
-
-    $response = json_decode($json_response, true);
-	echo $response
-
+$data = array("username" => "test@user.com", "password" => "pass");                                                                    
+$data_string = http_build_query($data);                                                                                   
+ 
+$ch = curl_init('http://localhost/php/registration/check_login.php');                                                                      
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                                                                                                                                 
+ 
+$result = curl_exec($ch);
+echo $result;
 ?>

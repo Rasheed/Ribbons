@@ -2,7 +2,8 @@
 include("../database.php");
 $DB = new Database();
 $conn = $DB->init();
-if(isset($_POST['username'], $_POST['password'])) {
+echo json_encode($_POST);
+/*if(isset($_POST['username'], $_POST['password'])) {
 AboutMe, Birthday, FirstName, LastName, Email, Password, Gender)
   $username = $_POST['username'];
   $password = $_POST['password'];
@@ -12,5 +13,5 @@ AboutMe, Birthday, FirstName, LastName, Email, Password, Gender)
   $users = $stmt->fetchAll(); 
   echo json_encode($users);
 }
-mysql_close($conn);
+mysql_close($conn);*/
 ?>
