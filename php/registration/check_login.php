@@ -2,7 +2,7 @@
 include("../database.php");
 $DB = new Database();
 $conn = $DB->init();
-echo json_encode($_SERVER);
+echo json_encode($_POST);
 /*if($_POST['action'] == "check_login") {
 #AboutMe, Birthday, FirstName, LastName, Email, Password, Gender)
   $username = $_POST['username'];

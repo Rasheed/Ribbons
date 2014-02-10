@@ -1,10 +1,14 @@
 $(function() {
-  $('#login').on('click', function(e) {
+  $('.login').on('click', function(e) {
     e.preventDefault();
-    var username = document.getElementById("#username").value;
-    var password = document.getElementById("#password").value;
+    var username = $('#user').val();
+    var password = $('#pass').val();
     // Regex needs to be checked. 
     var emailreg = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+
+
+    alert(username);
+    alert(password);
 
     if(username == '') {
       alert('You have not entered an email.');
@@ -17,7 +21,6 @@ $(function() {
       alert('You have not entered a password.');
       return false;
     }
-    alert(username);
 
     $.ajax({
       url: 'php/registration/check_login.php',
