@@ -6,10 +6,6 @@ $(function() {
     // Regex needs to be checked. 
     var emailreg = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
 
-
-    alert(username);
-    alert(password);
-
     if(username == '') {
       alert('You have not entered an email.');
       return false;
