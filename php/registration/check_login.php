@@ -16,4 +16,5 @@ if(isset($_POST['username'], $_POST['password'])) {
 	$data = array("isUser" => "false");                                                                    
 	echo json_encode($data);
 }
+}
 ?>
