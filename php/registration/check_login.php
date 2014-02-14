@@ -2,7 +2,6 @@
 include("../database.php");
 $DB = new Database();
 $conn = $DB->init();
-echo json_encode($_POST);
 if(isset($_POST['username'], $_POST['password'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
