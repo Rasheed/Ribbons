@@ -12,6 +12,7 @@ $(function() {
     }
     if(!emailreg.test(username)) {
       alert('Email entered has an incorrect format.');
+      return false;
     }
     if(password == '') {
       alert('You have not entered a password.');
@@ -21,14 +22,22 @@ $(function() {
     $.ajax({
       url: 'api/login/check_login.php',
       type: 'post',
-      data: {'action': 'check_login', 'username': username, 'password': password},
-        success: function(data, status) {
-          console.log(data);
-          console.log(status);
+      data: {'username': username, 'password': password},
+      dataType: 'json',
+        success: function(data) {
+          console.log(data.isUser);
+          if(eval(data.isUser)) {
+            console.log('Moving to homepage');
+            sessionStorage.setItem('userId','id1234');
+            window.location.href='home.html';
+          }
+          if(!eval(data.isUser)) {
+            alert('Incorrect log in information');
+          }
         },
         error: function(xhr, desc, err) {
           console.log(xhr);
-          console.log("Details: " + desc + "\nError:" + err);
+          console.log('Details: ' + desc + '\nError:' + err);
         }
     });
     return true;
@@ -36,7 +45,7 @@ $(function() {
 
   var username = false;
   var password = false;
-  $("#username").on("input", function() {
+  $('#username').on('input', function() {
     if ( $(this).val().length > 0) {
       username = true;
     } else {
@@ -51,7 +60,7 @@ $(function() {
     }
   });
 
-  $("#password").on("input", function() {
+  $('#password').on('input', function() {
     if ( $(this).val().length > 0) {
       password = true;
     } else {
