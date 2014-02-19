@@ -1,5 +1,5 @@
 <?php
-	include("../database.php");
+	include("../../database.php");
 	$DB = new Database();
 	$conn = $DB->init();
 	echo json_encode($_POST);

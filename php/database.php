@@ -8,15 +8,15 @@ class Database
 	
 	public function init(){
 	$conn = "";
-    // Connect to database.
-    try {
-        $conn = new PDO( "mysql:host=$this->host;dbname=$this->db", $this->user, $this->pwd);
-        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    }
-    catch(Exception $e){
-        die(var_dump($e));
-    }
-	return $conn; 
+		// Connect to database.
+		try {
+			$conn = new PDO( "mysql:host=$this->host;dbname=$this->db", $this->user, $this->pwd);
+			$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+		}
+		catch(Exception $e){
+			die(var_dump($e));
+		}
+		return $conn; 
 	}
 	
 	public function getHost(){

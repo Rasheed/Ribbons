@@ -19,7 +19,7 @@ $(function() {
     }
 
     $.ajax({
-      url: 'php/registration/check_login.php',
+      url: 'api/login/check_login.php',
       type: 'post',
       data: {'action': 'check_login', 'username': username, 'password': password},
         success: function(data, status) {
