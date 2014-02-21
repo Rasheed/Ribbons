@@ -1,5 +1,5 @@
 <?php
-	$data = array("first_name"=>"new", "last_name"=>"user","email" => "new@user.com", "password" => "pass", "gender" => "Male", "birthday"=>"1992-12-16");     
+	$data = array("first_name"=>"new", "last_name"=>"user","email" => "new1@user.com", "password" => "pass", "gender" => "Male", "birthday"=>"1992-12-16");     
 	$data_string = http_build_query($data);                                                                                   
 	//echo $data_string;
 	//echo $data_string;

@@ -11,7 +11,7 @@
 	  $users = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 	  if(count($users) == 1) {
 		$data = array("isUser" => "true");   
-		$data['Id'] = $users['Id'];
+		$data['Id'] = $users[0]['Id'];
 		echo json_encode($data);
 		} else {
 		$data = array("isUser" => "false");                                                                    
