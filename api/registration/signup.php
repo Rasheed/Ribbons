@@ -15,13 +15,16 @@
  		  $stmt->execute(array($email));
  		  $users = $stmt->fetchAll(PDO::FETCH_ASSOC); 
  		  if(count($users)>0){
- 			echo "user exists";
+ 			$data = array("userGenerated" => "false");   
+			echo json_encode($data);
  			return;
  		  } else { 
  			$sql_insert = "INSERT INTO users (Email,Password,FirstName,LastName,Gender,Birthday) VALUES (?,?,?,?,?,?);";
  			$stmt = $conn->prepare($sql_insert);
- 			$stmt->execute(array($email, $password, $first_name, $last_name, $gender, $birthday));
- 			echo "success";
+ 			$stmt->execute(array($email, $password, $first_name, $last_name, $gender, $birthday));			
+ 			$data = array("userGenerated" => "true");  
+			$data['Id'] = $conn->lastInsertId();
+			echo json_encode($data);
  			return;
  		  }
  		  echo json_encode($users);
