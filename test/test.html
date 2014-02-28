@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+ <link href="test.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+
+<!-- this "master" container gets used for things like a weighted footer -->
+<div class="container master-container">
+<!-- ======================================= -->
+
+  <header class="container global-header">
+    <div class="inner-w">
+      
+      <div class="image-w site-logo">
+        <img src="http://placehold.it/500x500/ff0066" alt="Site logo" />
+      </div>
+      <div class="site-title">Global-header</div>
+      
+    </div>
+  </header>
+
+  
+  <section class="container about">
+    <div class="inner-w">
+        
+      <h1>All you need to build an elegant responsive&nbsp;website.</h1>
+      <p class="ghost"><em>Well, this - and the client's content - maybe a CMS of some sort - a good attitude - and a dash of&nbsp;javascript.</em></p>
+      <p>The sooner you <em>refresh</em> your outlook, the happier you will be. I'm not saying this is <em>easy</em> - I'm just saying this is a simple approach that might help you get back to the basics with a fresh view of what you <em>really</em> need. Dont give-in to bootstrap or other rediculous CSS "frameworks." It's much much much more complicated than just learning how basic CSS positioning works, and that is all you need - to style&nbsp;a&nbsp;webpage. Content first.</p>
+      
+    </div>
+  </section>
+
+
+  <section class="container stucture-outline">
+    <div class="inner-w">
+
+      <h2>Basic Structure:</h2>
+      <ul class="list">
+        <li>html</li>
+        <li>➝ body</li>
+        <li>- ➝ .master-container
+        <span class="ghost"> (mostly for weighted footer)</span></li>
+        <li>- - ➝ .container 
+          <span class="ghost"> (these are the different sections)</span></li>
+        <li>- - - ➝ .inner-w 
+          <span class="ghost"> (<em>with modifiers</em> - .trim-width)</span></li>
+        <li>- - - - ➝ .block 
+          <span class="ghost"> (target by section class)</span></li>
+      </ul>
+      
+    </div>
+  </section>
+  
+
+  <section class="container column-example">
+    <div class="inner-w">
+      
+      <h2>Columns:</h2>
+      <p>Columns? - Eh, I'm not so sure about these.... maybe they should just be blocks?</p>
+      <div class="column column-a">
+        <p>Oh, you need some columns? Try it like this. They all start out 100% width. When you reach the desired breakpoint, you just make them the widths you want and float them accordingly. No need to call them some specific names like quarter or third in your markup. Your whole presentation layer can be in&nbsp;your&nbsp;CSS.</p>
+      </div>
+      <div class="column column-b">
+        <p>Target them by section if you have many different column layouts on a page. Make sure you work from small screens&nbsp;up.</p>
+      </div>
+      
+    </div>
+  </section>
+  
+  
+  <section class="container section04">
+    <div class="inner-w">
+
+      <h2>.section04 .inner-w {float: left}</h2>
+      
+    </div>
+  </section>
+
+
+  <section class="container grid-example">
+    <div class="inner-w">
+        
+      <h2>Grids:</h2>
+      <ul class="block-list">
+        <li class="block">.block</li>
+        <li class="block">.block</li>
+        <li class="block">.block</li>
+        <li class="block">.block</li>
+        <li class="block">.block</li>
+        <li class="block">.block</li>
+      </ul>
+      
+    </div>
+  </section>
+
+
+  <section class="container section06">
+    <div class="inner-w">
+      
+      <h2>.section06 .inner-w {float: right}</h2>
+      
+    </div>
+  </section>
+
+
+  <section class="container section07">
+    <div class="inner-w">
+      
+      <h2 class="with-background">Background Images:</h2>
+      <p class="with-background">Full image backgrounds on certain sections. (the padding on the body is just for example, so this image should go all the way to&nbsp;the&nbsp;sides.</p>
+      
+    </div>
+  </section>
+
+
+<!-- ======================================= -->
+</div> <!-- .master-container -->
+</body>
+</html>

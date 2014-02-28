@@ -6,32 +6,33 @@
     <link href="css/design.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-	<div id="container">
-    	<header>
-            <hgroup>
-                <h1><a href="#">CSS3 Ribbon Menu</a></h1>
-                <h2><a href="#"> 3D Buttons, Now Without jQuery</a></h2>
-            </hgroup> 
-   		</header>
-        
-    <div id="menu">
-        <nav>
-            <ul>
-                <span class="navbefore"></span>
-                <li class="menu-item"><a href="#">About</a></li>
-                <li class="menu-item"><a href="#">Facebook</a></li>
-                <li class="menu-item"><a href="#">Twitter</a></li>
-                <li class="menu-item"><a href="#">Portfolio</a></li>
-                <li class="menu-item"><a href="#">Contact</a></li>
-                <li class="menu-item noHover"><a href="#">.</a></li>
-                <span class="navafter"></span>
-            </ul>
-        </nav>
-    </div>  
-
   
-    <h1>Resitration Form</h1>
-    <form>
+  <div class="container master">
+  
+	<h1><a href="#">Ribbon</a></h1>
+    
+     <div id="spanContainer">   
+        <div id="menu">
+            <nav>
+                <ul>
+                    <span class="navbefore"></span>
+                    <li class="menu-item"><a href="#">About</a></li>
+                    <li class="menu-item"><a href="#">Facebook</a></li>
+                    <li class="menu-item"><a href="#">Twitter</a></li>
+                    <li class="menu-item"><a href="#">Portfolio</a></li>
+                    <li class="menu-item"><a href="#">Contact</a></li>
+                    <li class="menu-item noHover"><a href="#">.</a></li>
+                    <span class="navafter"></span>
+                </ul>
+            </nav>
+        </div>  
+     </div>
+
+	<section id="container form">
+  	<div id="inner-w">
+    <h2>Resitration Form</h2>
+    
+    
       First Name: <input type="text" id="fname"><br>
       Last Name: <input type="text" id="lname"><br>
       Email: <input type="text" id="email"><br>
@@ -43,7 +44,9 @@
 
       Location: <button type="button" id="location">Add Location</button><br>
       <!-- Location has these options for the one textbox other than id: From, Living. -->
-      <div id="locationform">
+    </div><!-- inner-container -->
+    </section>
+     <div id="locationform">
         <form>
           <select id="loctype">
             <option value="from">from</option>
@@ -53,8 +56,10 @@
           <button type="button" id="locationf">Save Location</button><br>
         </form>
       </div>
+      
       Locations entered so far:<br>
       <ul id="locationlist"></ul>
+ 
 
       Education: <button type="button" id="education">Add Education</button><br>
       <!-- Education other than id has start date, graduation date and course. -->
@@ -87,7 +92,10 @@
       <textarea id="aboutme" rows="4" cols="50">Enter a description of yourself that you want to appear on your profile here...</textarea><br>
       <input type="submit" id="register" value="Register">
     </form>
-        </div>
+  	
+  
+    </div><!-- master-container -->
+       
    </body>
 </html>
 
