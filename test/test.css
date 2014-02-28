@@ -1,0 +1,363 @@
+/*
+
+includes:
+
+Normalize
+Basic: setup
+Basic: user-reset
+
+*/
+
+// $variables
+$trim-width: 56em;
+
+
+// $basic structure
+.container {
+  position: relative;
+  // relative so we can absolutly position things inside if desired. You can choose to use this only on certain areas, but chances are that you are going to only be posistioning like this withing major sections or .block elements
+}
+
+@mixin make-block {
+  /*display: block;*/
+  width: 100%;
+  float: left;
+}
+
+.container, .column, .block-list, .block {
+  @include make-block;
+  // get all the building blocks ready for anti-gravity
+}
+
+// $inner-wrapper
+.inner-w {
+  width: 100%;
+  @include center-block; // (centers block elements)
+  max-width: $trim-width;
+}
+
+.column {
+  padding: $padding/2;
+  background-color: rgba(255,255,255,.2);
+  margin-bottom: 1em;
+  text-align: left; // $?
+}
+
+.block-list { // remove default styles for lists of elements
+  list-style: none;
+  margin: 0; padding: 0;
+}
+
+// $blocks
+.block-list .block { 
+  // just for example. further covered in a different pen.
+  background-color: rgba(255,255,255,.2);
+  padding: $padding;
+  margin-bottom: 1em;
+}
+
+
+
+.global-header {
+  //
+  .site-logo {
+    max-width: 4em;
+    margin-right: $padding;
+    float: left;
+  }
+  .site-title {
+    float: left;
+    //@include screen-reader-text;
+  }
+}
+
+
+.about {
+  //
+  p {
+    text-align: left;
+  }
+}
+
+
+.column-a {
+  // width: 100%; (already default from .column)
+  @include bp(m) {
+    width: 58%;
+    float: left; // already floated left by default - but to reiterate
+  }
+}
+
+.column-b {
+  // width: 100%; (already default from .column)
+  @include bp(m) {
+    width: 40%;
+    float: right;
+  }
+}
+
+
+// $type
+h1, h2, h3, h4, h5, h6 {
+  font-family: helvetica;
+}
+
+h1 {
+  font-size: 1.2em;
+  line-height: 1.4;
+  margin: 0;
+  padding: 1em 0;
+  @include bp(m) {
+    font-size: 1.4em;
+  }
+  @include bp(l) {
+    font-size: 1.6em;
+  }
+  @include bp(xl) {
+    font-size: 1.8em;
+  }
+}
+
+h2 {
+  font-size: 1em;
+  margin: 0;
+  padding: 1em 0;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.4;
+}
+
+
+
+
+.section04 .inner-w {
+  float: left;
+}
+
+.section06 .inner-w {
+  float: right;
+}
+  
+// target by section name (about) (contact) (our-work) etc. 
+.section07 {
+  @extend .texture-dark;
+}
+
+
+// BREAK POINT ->
+// just a basic @media rule example...
+// would normally be using a mixin - but for those who don't yet
+@media (min-width: 40em) {
+  
+  .column {
+    margin-bottom: 0;
+  }
+
+  .block-list .block {
+    width: 32%;
+    margin-right: 2%;
+    &:nth-of-type(3n+3) {
+      margin-right: 0;
+    }
+  }
+
+} // end @media rule
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// just for presentation 
+
+.container {  
+  padding: $padding/2;
+  border: 1px solid $color;
+  margin-bottom: 1em;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.inner-w {
+  padding: $padding/2;
+  border: 1px solid rgba(0,0,0,.15);
+  text-align: center;
+}
+
+.container:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.1);
+}
+
+.list {
+  display: block;
+  /*border: 1px solid red;*/
+  float: left;
+  @include center-block;
+  list-style: circle;
+  text-align: left;
+  margin-left: 5% /* shame */
+}
+
+@media (min-width: 40em) {
+  .list {
+    float: none;
+    @include center-block;
+  }
+}
+
+h1, h2, h3 {
+  margin-bottom: 3rem;
+}
+
+
+
+
+
+$ghost: .3;
+
+.ghost {
+  opacity: $ghost;  
+}
+
+.master-container {
+  margin-bottom: 0;
+}
+
+.with-background {
+  /*background-color: rgba(255,255,255,.5);*/
+  padding: $padding/2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $content strategy helpers
+h1:after, h2:after, h3:after, h4:after, 
+h5:after, h6:after, p:after {
+  color: rgba(0,0,0,.2);
+}
+.dark, .texture-dark {
+  // $content strategy helpers
+  h1:after, h2:after, h3:after, h4:after, 
+  h5:after, h6:after, p:after {
+    color: rgba(255,255,255,.2);
+  }
+}
+
+h1:after {
+  content: " ←h1";  
+}
+
+h2:after {
+  content: " ←h2";  
+}
+
+h3:after {
+  content: " ←h3";  
+}
+
+h4:after {
+  content: " ←h4";  
+}
+
+h5:after {
+  content: " ←h5";  
+}
+
+h6:after {
+  content: " ←h6";  
+}
+
+p:after {
+  content: " ←p";  
+}
