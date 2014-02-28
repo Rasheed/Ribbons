@@ -1,80 +1,13 @@
 $(function() {
-	$('#locationform').hide();
-	$('#educationform').hide();
-	$('#workform').hide();
-	
-	var locationls = [];
-	var educationls = [];
-	var workls = [];
 	var fname = '';
 	var lname = '';
 	var email = '';
 	var password = '';
 	var bday = '';
 	var gender = '';
-	var aboutme = '';
 
 	var emailreg = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
 	var passreg = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/; 
-
-	$('#location').on('click', function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-		$('#locationform').show();
-	});
-	$('#locationf').on('click', function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-		var locid = $('#locid').val();
-		var loctype = $('#loctype').val();
-		var loc = locid.concat(', ', loctype);
-		locationls.push(loc);
-		$('#locationform').hide();
-		$('#locationlist').empty();
-		for(var i=0; i<locationls.length; i++) {
-			$('#locationlist').append('<li>'+locationls[i]+'</li>');
-		}
-	});
-	$('#education').on('click', function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-		$('#educationform').show();
-	});
-	$('#educationf').on('click', function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-		var eduid = $('#eduid').val();
-		var estart = $('#estart').val();
-		var eend = $('#eend').val();
-		var ecourse = $('#ecourse').val();
-		var edu = eduid.concat(', ', estart,', ', eend, ', ', ecourse);
-		educationls.push(edu);
-		$('#educationform').hide();
-		$('#educationlist').empty();
-		for(var i=0; i<educationls.length; i++) {
-			$('#educationlist').append('<li>'+educationls[i]+'</li>');
-		}
-	});
-	$('#work').on('click', function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-		$('#workform').show();
-	});
-	$('#workf').on('click', function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-		var workid = $('#workid').val();
-		var wstart = $('#wstart').val();
-		var wend = $('#wend').val();
-		var wposition = $('#wposition').val();
-		var wor = workid.concat(', ', wstart,', ', wend, ', ', wposition);
-		workls.push(wor);
-		$('#workform').hide();
-		$('#worklist').empty();
-		for(var i=0; i<workls.length; i++) {
-			$('#worklist').append('<li>'+workls[i]+'</li>');
-		}
-	});
 
 	function checkRegisterFields() {
 		fname = $('#fname').val(); 
@@ -122,7 +55,6 @@ $(function() {
 			alert('You must pick a gender.');
 			return false;
 		}
-		aboutme = $('#aboutme').val();
 		return true;
 	}
 
@@ -132,18 +64,24 @@ $(function() {
 
 		if(checkRegisterFields()){
 			$.ajax({
-      			url: 'helpers/echo.php',
+      			url: 'api/registration/signup.php',
       			type: 'post',
-      			data: {'fname': fname, 'lname': lname, 'email': email,
-      		 	'password': password, 'bday': bday, 'gender': gender, 'aboutme': aboutme, 
-      		 	'locationls': locationls, 'educationls': educationls,'workls': workls},
+      			data: {'first_name': fname, 'last_name': lname, 'email': email,
+      		 		'password': password, 'birthday': bday, 'gender': gender},
         		success: function(data) {
-          			console.log(data);
-          			alert('User registered!');
+          			if(eval(data.userGenerated)) {
+            			console.log('Moving to homepage');
+			      		console.log(data.userId);
+            			sessionStorage.setItem('userId',data.userId);
+            			window.location.href='home.html';
+          			}
+          			if(!eval(data.userGenerated)) {
+            			alert('The entered email is already registered.');
+          			}
         		},
         		error: function(xhr, desc, err) {
           			console.log(xhr);
-          			console.log("Details: " + desc + "\nError:" + err);
+          			console.log('Details: ' + desc + '\nError:' + err);
         		}
     		});
     	}

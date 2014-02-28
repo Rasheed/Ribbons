@@ -1,30 +1,13 @@
 <html>
   <head>
     <script type="text/javascript" src="js/jquery.2.0.2.js"></script>
-    <script type="text/javascript">
-	$(function() {
-    	var userId=sessionStorage.getItem('userId');
-    	alert(userId);
-		$.ajax({
-		  url: 'api/profile/get_userinfo.php',
-		  type: 'GET',
-		  data: {'id': userId},
-		  dataType: 'json',
-			success: function(data) {
-				console.log(data);
-				$('#profile_name').text(data.FirstName + " " + data.LastName);
-			},
-			error: function(xhr, desc, err) {
-			  console.log(xhr);
-			  console.log('Details: ' + desc + '\nError:' + err);
-			}
-		});
-		return true;
-	});
-    </script> 
+    <script type="text/javascript" src=""></script>
 	<link href="css/userhome.css" rel="stylesheet" type="text/css">
   </head>
   <body>
+  	<!--Show existing information about the user : Firstname, Surname, Bday, Gender
+    and point out missing ones : Location, Education, Work, About Me, PPic, CPic
+    -->
   	<img class="block" src="https://lh4.googleusercontent.com/-MpYP8v5LFYk/UpwkFj09NjI/AAAAAAAAgv4/A4aegtvObzs/s652-fcrop64=1,169d09e6febdce7e/IMG_1272.jpg" class="back" alt="" >
 	  <div class="user">
 		<img src="https://lh3.googleusercontent.com/-7jdZCLeEaho/AAAAAAAAAAI/AAAAAAAAZIw/GMkOu6gF6SA/s120-c/photo.jpg" class="avatar" alt="" />
