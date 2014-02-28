@@ -28,7 +28,7 @@ $(function() {
           console.log(data.isUser);
           if(eval(data.isUser)) {
             console.log('Moving to homepage');
-			console.log(data.Id);
+			      console.log(data.Id);
             sessionStorage.setItem('userId',data.Id);
             window.location.href='home.html';
           }
