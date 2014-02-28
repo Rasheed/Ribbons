@@ -56,6 +56,20 @@ form { display: block; margin: 20px auto; background: #eee; border-radius: 10px;
     Locations entered so far:<br>
     <ul id="locationlist"></ul>
 
+    <div id="container">
+            <h1>Education</h1>
+            <form id="location-form">
+                <select id="loctype">
+                  <option value="from">from</option>
+                  <option value="living">living</option>
+                </select><br>
+                Location ID: <input type="text" id="locid"><br>
+                <input id="submit" type="submit" value="Add to List">
+            </form>
+            <ul id="show-items"></ul>
+            <a href="#" id="clear-all">Clear All</a>
+        </div>
+
     Education: <button type="button" id="education">Add Education</button><br>
     <div id="educationform">
         <form>
