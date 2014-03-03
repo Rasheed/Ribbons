@@ -15,10 +15,11 @@
 		$data['UserLocationId'] = $users[0]['UserLocationId'];
 		$data['WorkplaceId'] = $users[0]['WorkplaceId'];
 		$data['EducationId'] = $users[0]['EducationId'];
+		$data['isComplete'] = isset($users[0]['UserLocationId'], $users[0]['WorkplaceId'], $users[0]['EducationId']);
 		echo json_encode($data);
 		} else {
-		$data = array("isUser" => "false");                                                                    
-		echo json_encode($data);
+			$data = array("isUser" => "false");                                                                    
+			echo json_encode($data);
 		}
 	}
 ?>

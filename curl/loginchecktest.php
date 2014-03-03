@@ -1,5 +1,5 @@
 <?php
-	$data = array("username" => "test@user.com", "password" => "pass");                                                                    
+	$data = array("username" => "newr@user.com", "password" => "pass");                                                                    
 	$data_string = http_build_query($data);                                                                                   
  
 	$ch = curl_init('http://localhost/api/login/check_login.php');                                                                      
