@@ -73,7 +73,7 @@ $(function() {
             			console.log('Moving to homepage');
 			      		console.log(data.userId);
             			sessionStorage.setItem('userId',data.userId);
-            			window.location.href='home.html';
+            			window.location.href='user_profile.html';
           			}
           			if(!eval(data.userGenerated)) {
             			alert('The entered email is already registered.');

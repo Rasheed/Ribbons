@@ -29,7 +29,7 @@ $(function() {
 	var workls = [];
 
 	var userId=sessionStorage.getItem('userId');
-	alert(userId);
+	console.log(userId);
 
 	$('#name').html(fname+lname);
 	$('#email').html(email);
@@ -56,7 +56,7 @@ $(function() {
 		$('#locationform').hide();
 		$('#locationlist').empty();
 		for(var i=0; i<locationls.length; i++) {
-			$('#locationlist').append('<li>'+locationls[i]+'</li>');
+			$('#locationlist').append('<li> <input type="checkbox" id="'+locationls[i]+'"/>'+locationls[i]+'</li>');
 		}
 	});
 	$('#education').on('click', function(e) {

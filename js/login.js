@@ -26,11 +26,15 @@ $(function() {
       dataType: 'json',
         success: function(data) {
           console.log(data.isUser);
+          console.log(data.isComplete);
           if(eval(data.isUser)) {
-            console.log('Moving to homepage');
-			      console.log(data.Id);
-            sessionStorage.setItem('userId',data.Id);
-            window.location.href='home.html';
+            if(eval(data.isComplete)) {
+              sessionStorage.setItem('userId',data.Id);
+              window.location.href='home.html';
+            } else {
+              sessionStorage.setItem('userId',data.Id);
+              window.location.href='user_profile.html';
+            }
           }
           if(!eval(data.isUser)) {
             alert('Incorrect log in information');
@@ -42,6 +46,12 @@ $(function() {
         }
     });
     return true;
+  });
+
+  $('#register').on('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    window.location.href='registration.html';
   });
 
   var username = false;
