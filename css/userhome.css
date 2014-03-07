@@ -1,37 +1,8 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
-*, *:before, *:after { box-sizing: border-box; }
-
-html { height: 100%; width: 100%; background: DDD;}
-body { font: 15px/1em 'Open Sans', sans-serif; }
-
-/* Main Nav */
-#main-nav 			{ position: absolute; width: 100%; background: #bbb; z-index:1; height: 75px; left: 0; top:300px;} /* Height of header */
-#main-nav.fixed		{ position: fixed; top:0;}
-
-#main-nav li { float: left; text-align:center; width: 20%;}
-#main-nav .current a { background: #aaa; color: #fff;}
-#main-nav a{ padding: 30px; display: block; color: #111; text-decoration: none; text-transform: uppercase;}
-#main-nav a:hover { background: #ddd;}
 
 /* Main Content */
 #main-wrapper { width: 85%; margin: 0 auto;}
 
 .wrapper { height: 375px; text-align: center; font-weight: bold; padding: 150px 0 0 0;} /* Height of nav bar added to total height: 300 */
-
-/* Section Background Colors */
-#main-header,
-#main-footer  { background: #f1c40f;}
-#section01 		{ background: #2ecc71;}
-#section02 		{ background: #e74c3c;}
-#section03 		{ background: #16a085;}
-#section04 		{ background: #2c3e50;}
-
-.container {
-  min-width:50%;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top:0%;
-}
 
 h1 {
   font-family: "Open Sans", sans;
@@ -50,33 +21,30 @@ h2 {
   
 }
 
-.service-details {
+.ribbon {
 	/*width: 460px;*/
 	height: 400px;	
-	 -webkit-filter: blur(10px);
+
 	/*height: 230px;*/
 	overflow: hidden;
 	position: relative;
 }
 
-.service-details img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: inherit;
-	width: auto;
-	height: 100%;
-	float: left;
-	transition: all 0.8s;
-	-moz-transition: all 0.8s;
-
+.ribbon-photo img{
+	height:100%;
+	width:100%;
+	-webkit-filter: blur(13px);
+    -moz-filter: blur(13px);
+    -o-filter: blur(13px);
+    -ms-filter: blur(13px);
+    filter: blur(13px);
 }
 
-.service-details:hover img {
+.ribbon:hover img {
 	/*opacity: 0.4 !important;*/
 }
 
-.service-details .service-hover-text h3 {
+.ribbon .ribbon-hover-text h3 {
 	padding: 0px;
 	margin: 0px;
 	font-size: 25px;
@@ -84,7 +52,7 @@ h2 {
 	font-family: "Open Sans";
 }
 
-.service-details .service-hover-text h4 {
+.ribbon .ribbon-hover-text h4 {
 	padding: 0px;
 	padding-bottom: 13px;
 	margin: 0px;
@@ -96,7 +64,7 @@ h2 {
 	border-bottom: 2px solid #000;
 }
 
-.service-details .service-hover-text p {
+.ribbon .ribbon-hover-text p {
 	padding-top: 13px;
 	font-size: 14px;
 	line-height: 20px;
@@ -104,7 +72,7 @@ h2 {
 }
 
 
-.service-details .service-hover-text{
+.ribbon .ribbon-hover-text{
 	width: 35%;
 	height: 100%;
 	position: absolute;
@@ -118,7 +86,7 @@ h2 {
 	-moz-transition: all 0.4s;
 }
 
-.service-details:hover .service-hover-text {
+.ribbon:hover .ribbon-hover-text {
 	width : 80%;
 	height: 100%;
 	display: block !important;
@@ -129,7 +97,7 @@ h2 {
 }
 
 
-.service-details .service-text {
+.ribbon .ribbon-text {
 	width: 50%;
 	height: inherit;
 	background: #000;
@@ -138,7 +106,7 @@ h2 {
 	left: 80%;
 }
 
-.service-details .service-text p {
+.ribbon .ribbon-text p {
 	padding:100px 0px 0px 20px;
 	font-size: 24px;
 	font-family: "Open Sans";
@@ -146,27 +114,27 @@ h2 {
 	color: #fff;
 }
 
-.service-details .service-text p span {
+.ribbon .ribbon-text p span {
 	font-family: "Open Sans" !important;
 }
 
-.service-details .service-text a , .service-white .service-text {
+.ribbon .ribbon-text a , .profile-image .ribbon-text {
 	padding: 0px 0px 0px 20px;
 	font-size: 14px !important;
 	font-family: "Open Sans" !important;
 	text-decoration: none !important; 
 }
 
-.service-details .service-text {
+.ribbon .ribbon-text {
 	float: right;
 } 
 
-.service-white {
+.profile-image {
 	background: #333;
 	width: 20% !important;
 	height: 100% !important;
 }
 
-.service-white p {
+.profile-image p {
 	color: #000 !important;
 }
