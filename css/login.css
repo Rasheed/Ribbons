@@ -1,12 +1,15 @@
 @import url(http://fonts.googleapis.com/css?family=Patua+One);
 @import url(http://fonts.googleapis.com/css?family=Russo+One);
 
+body {
+		background-image: url(http://backgrounddesignz.com/wp-content/uploads/2013/12/ws_Minimal_Gray_to_White_Gradient_1920x1200.jpg);
+}
   
 h1{
   color: #fff;           
   font-family: 'Russo One', sans-serif;
   font-size: 100px;
-  text-align:center; 
+  text-align:center;
 }
 
 
@@ -50,7 +53,7 @@ h1{
 }
 
 .password {
-  background-color: #404241;
+  background-color: #09C;
 }
 
 .password::after {
@@ -67,7 +70,7 @@ h1{
 }
 
 .login {
-  background-color: #e9c85d;
+  background-color: #FFD700;
   display: table;
 }
 
@@ -80,7 +83,7 @@ h1{
 }
 
 .register {
-  background-color: #09F;
+  background-color: #FFA500;
   display: table;
 }
 
