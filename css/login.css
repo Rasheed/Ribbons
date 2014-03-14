@@ -8,9 +8,11 @@ body {
 h1{
   color: #FFF;           
   font-family: 'Russo One', sans-serif;
-  font-size: 100px;
+  font-size: 7em;
   text-align:center;
-}
+  line-height: 1.4;
+  margin: 0;
+  }
 
 
 * { box-sizing: border-box }
