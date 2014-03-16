@@ -6,7 +6,8 @@
 	<link href="css/userhome.css" rel="stylesheet" type="text/css">
 
 	<style>
-body { padding: 30px }
+body { padding: 30px;
+background-image: url(http://backgrounddesignz.com/wp-content/uploads/2013/12/ws_Minimal_Gray_to_White_Gradient_1920x1200.jpg); }
 form { display: block; margin: 20px auto; background: #eee; border-radius: 10px; padding: 15px }
 
 .progress { position:relative; width:400px; border: 1px solid #ddd; padding: 1px; border-radius: 3px; }
@@ -17,25 +18,45 @@ form { display: block; margin: 20px auto; background: #eee; border-radius: 10px;
 
   </head>
   <body>
-  	<img class="block" src="https://lh4.googleusercontent.com/-MpYP8v5LFYk/UpwkFj09NjI/AAAAAAAAgv4/A4aegtvObzs/s652-fcrop64=1,169d09e6febdce7e/IMG_1272.jpg" class="back" alt="" >
-	  <div class="user">
-		<img src="https://lh3.googleusercontent.com/-7jdZCLeEaho/AAAAAAAAAAI/AAAAAAAAZIw/GMkOu6gF6SA/s120-c/photo.jpg" class="avatar" alt="" />
-
-		<div class="usr-info">
-		  <div class="rna KXa Xia" guidedhelpid="profile_name" id="profile_name"></div>
-		
-		  <div class="circle-button">
-			<div><span class="icon">&#9675;</span> <span class="icon-txt">2 circles</span></div>
-		  </div>
-
-		  <div class="followers">55,467 have him in circles</div>
-		</div>
-	  </div>
+  <nav>
+          <ul>
+            <li>
+              <div align="left"><a href="#"><img src="img/side-navigation-menu_home.svg" alt="Home">Home</a></div>
+            </li>
+            <li>
+              <div align="left"><a href="#"><img src="img/side-navigation-menu_profile.svg" alt="Profile">Profile</a></div>
+            </li>
+            <li>
+              <div align="left"><a href="#"><img src="img/side-navigation-menu_friends.svg" alt="Friends">Friends</a></div>
+            </li>
+            <li>
+              <div align="left"><a href="#"><img src="img/side-navigation-menu_messages.svg" alt="Messages">Messages</a></div>
+            </li>
+          </ul>
+  </nav>
+       <div class="inner-w">
+  		<img class="block" src="https://lh4.googleusercontent.com/-MpYP8v5LFYk/UpwkFj09NjI/AAAAAAAAgv4/A4aegtvObzs/s652-fcrop64=1,169d09e6febdce7e/IMG_1272.jpg" class="back" alt="" />
+   
+    	<h3> Profile Information </h3><br>
+    	<div class="column column-a">	
+    	  <span class="user"><img src="https://lh3.googleusercontent.com/-7jdZCLeEaho/AAAAAAAAAAI/AAAAAAAAZIw/GMkOu6gF6SA/s120-c/photo.jpg" class="avatar" alt="" /></span>
+    
+          <div class="user">
+                <div class="usr-info">
+                      <div class="rna KXa Xia" guidedhelpid="profile_name" id="profile_name"></div>
+                    
+                      <div class="circle-button">
+                        <div><h5><span class="icon">&#9675;</span> <span class="icon-txt">2 circles</h5></span></div>
+                      </div>
+            
+                      <div class="followers"><h5>55,467 have him in circles</h5></div>
+                </div>
+            </div>
+     	</div>
 	</img>
 
-
-	<hr/>
-	<h1> Profile Information </h1><br>
+	
+    <div class="column column-b">
 	<div id='name'> First and Last Name </div><br>
 	<div id='email'> Email </div><br>
 	<div id='bday'> Birthday </div><br>
@@ -116,7 +137,13 @@ form { display: block; margin: 20px auto; background: #eee; border-radius: 10px;
     </div>
 
     <div id="status2"></div>
+    </div>
+    </div>
+    </dir>
+    
 
-	<!--Show all posts if user fully registered.-->
+
+
+  <!--Show all posts if user fully registered.-->
   </body>
 </html>   

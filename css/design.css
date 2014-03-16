@@ -186,6 +186,8 @@ svg, a{
 .inner-w {
   padding: 0.5rem;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  text-align: center;
+}
+.inner-w {
+	text-align:center;
 }
 /* container */
