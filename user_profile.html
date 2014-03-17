@@ -3,38 +3,17 @@
     <script type="text/javascript" src="js/jquery.2.0.2.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
     <script type="text/javascript" src="js/user_profile.js"></script> 
-	<link href="css/userhome.css" rel="stylesheet" type="text/css">
 
-	<style>
-body { padding: 30px }
-form { display: block; margin: 20px auto; background: #eee; border-radius: 10px; padding: 15px }
+	  <style>
+      body { padding: 30px }
+      form { display: block; margin: 20px auto; background: #eee; border-radius: 10px; padding: 15px }
 
-.progress { position:relative; width:400px; border: 1px solid #ddd; padding: 1px; border-radius: 3px; }
-.bar { background-color: #B4F5B4; width:0%; height:20px; border-radius: 3px; }
-.percent { position:absolute; display:inline-block; top:3px; left:48%; }
-</style>
-
-
+      .progress { position:relative; width:400px; border: 1px solid #ddd; padding: 1px; border-radius: 3px; }
+      .bar { background-color: #B4F5B4; width:0%; height:20px; border-radius: 3px; }
+      .percent { position:absolute; display:inline-block; top:3px; left:48%; }
+    </style>
   </head>
   <body>
-  	<img class="block" src="https://lh4.googleusercontent.com/-MpYP8v5LFYk/UpwkFj09NjI/AAAAAAAAgv4/A4aegtvObzs/s652-fcrop64=1,169d09e6febdce7e/IMG_1272.jpg" class="back" alt="" >
-	  <div class="user">
-		<img src="https://lh3.googleusercontent.com/-7jdZCLeEaho/AAAAAAAAAAI/AAAAAAAAZIw/GMkOu6gF6SA/s120-c/photo.jpg" class="avatar" alt="" />
-
-		<div class="usr-info">
-		  <div class="rna KXa Xia" guidedhelpid="profile_name" id="profile_name"></div>
-		
-		  <div class="circle-button">
-			<div><span class="icon">&#9675;</span> <span class="icon-txt">2 circles</span></div>
-		  </div>
-
-		  <div class="followers">55,467 have him in circles</div>
-		</div>
-	  </div>
-	</img>
-
-
-	<hr/>
 	<h1> Profile Information </h1><br>
 	<div id='name'> First and Last Name </div><br>
 	<div id='email'> Email </div><br>
@@ -48,22 +27,18 @@ form { display: block; margin: 20px auto; background: #eee; border-radius: 10px;
             	<option value="from">from</option>
             	<option value="living">living</option>
           	</select><br>
-          	Location ID: <input type="text" id="locid"><br>
+          	Location: <input type="text" id="locid"><br>
           	<button type="button" id="locationf">Save Location</button>
           	<button type="button" id="cancelloc">Cancel</button><br>
         </form>
     </div>
     Locations entered so far:<br>
-
-    <section class="archive_control controls">
-          <button class="btn" ng-click="archive()">Delete selected</button>
-    </section> 
     <ul id="locationlist"></ul>
 
     Education: <button type="button" id="education">Add Education</button><br>
     <div id="educationform">
         <form>
-          	Education ID: <input type="text" id="eduid"><br>
+          	Name of School: <input type="text" id="eduid"><br>
           	Start Date: <input type="date" id="estart"><br>
           	Graduation Date: <input type="date" id="eend"><br>
           	Course: <input type="text" id="ecourse"><br>
@@ -77,7 +52,7 @@ form { display: block; margin: 20px auto; background: #eee; border-radius: 10px;
     Work: <button type="button" id="work">Add Work</button><br>
     <div id="workform">
         <form>
-          	Work ID: <input type="text" id="workid"><br>
+          	Work Place: <input type="text" id="workid"><br>
           	Start Date: <input type="date" id="wstart"><br>
           	End Date: <input type="date" id="wend"><br>
           	Position: <input type="text" id="wposition"><br>
@@ -90,12 +65,15 @@ form { display: block; margin: 20px auto; background: #eee; border-radius: 10px;
 
     <textarea id="aboutme" rows="4" cols="50">Enter a description of yourself that you want to appear on your profile here...</textarea><br><br>
 
-	<!--PPic, CPic-->
 	Profile Picture:<br>
+  <span id="profileimage">
+    <img src="" id="pimage">
+  </span>
 	<form action="helpers/upload.php" method="post" enctype="multipart/form-data" id="profilepic">
+        <input type="hidden" name="Id" id="userId">
         <input type="file" name="uploadedfile"><br>
         <input type="submit" value="Upload File to Server">
-    </form>
+  </form>
 
     <div class="progress">
         <div class="bar" id="profilebar"></div >
@@ -104,19 +82,5 @@ form { display: block; margin: 20px auto; background: #eee; border-radius: 10px;
 
     <div id="status1"></div>
 
-    <br>Ribbon Picture:<br>
-	<form action="helpers/upload.php" method="post" enctype="multipart/form-data" id="ribbonpic">
-        <input type="file" name="uploadedfile"><br>
-        <input type="submit" value="Upload File to Server">
-    </form>
-
-    <div class="progress">
-        <div class="bar" id="ribbonbar"></div >
-        <div class="percent" id="ribbonpercent">0%</div >
-    </div>
-
-    <div id="status2"></div>
-
-	<!--Show all posts if user fully registered.-->
   </body>
 </html>   

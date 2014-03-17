@@ -4,14 +4,43 @@
 	$conn = $DB->getConn();
 	if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 		if (isset($_GET['id'])) {
+			$data = array();
 			$id = $_GET['id'];
-			$sql_select = "SELECT u.Id, u.FirstName, u.LastName, u.Gender, u.CurrentRibbonPhoto, u.CurrentProfilePhoto, w.Name, w.Position, e.Name, e.StartDate, e.EndDate, e.Course
+			$sql_select = "SELECT u.Id, u.FirstName, u.LastName, u.Birthday, u.Email, u.Gender, u.CurrentRibbonPhoto, u.CurrentProfilePhoto, u.AboutMe, w.Name , w.Position, e.Name AS EduName, e.StartDate, e.EndDate, e.Course
 							FROM users u, user_locations ul, workplace w, education e
 							WHERE u.Id = ? AND u.UserLocationId = ul.UserLocationId AND w.WorkplaceId = u.WorkplaceId AND e.EducationId = u.EducationId;";
 			$stmt = $conn->prepare($sql_select);
 			$stmt->execute(array($id));
 			$return = $stmt->fetchAll(PDO::FETCH_ASSOC); 
-			echo json_encode($return[0]);
+			$data["Id"] = $return[0]["Id"];
+			$data["FirstName"] = $return[0]["FirstName"];
+			$data["LastName"] = $return[0]["LastName"];
+			$data["Birthday"] = $return[0]["Birthday"];
+			$data["Email"] = $return[0]["Email"];
+			$data["Gender"] = $return[0]["Gender"];
+			$data["CurrentRibbonPhoto"] = $return[0]["CurrentRibbonPhoto"];
+			$data["CurrentProfilePhoto"] = $return[0]["CurrentProfilePhoto"];
+			$data["AboutMe"] = $return[0]["AboutMe"];
+			$data["Name"] = $return[0]["Name"];
+			$data["Position"] = $return[0]["Position"];
+			$data["EduName"] = $return[0]["EduName"];
+			$data["StartDate"] = $return[0]["StartDate"];
+			$data["EndDate"] = $return[0]["EndDate"];
+			$data["Course"] = $return[0]["Course"];
+
+			$pic_select = "SELECT a.Id, p.Path 
+						   FROM albums a, photos p
+						   WHERE a.UserId = ? AND a.Name='Profile' AND p.AlbumId=a.Id";
+			$stmt_two = $conn->prepare($pic_select);
+			$stmt_two->execute(array($id));
+			$profilepic = $stmt_two->fetchAll(PDO::FETCH_ASSOC); 
+			if(count($profilepic) == 0) {
+				$data["hasProfilePic"] = false;  
+			} else {
+				$data["hasProfilePic"] = true;  
+				$data["picturePath"] = $profilepic[count($profilepic)-1]["Path"];
+			}
+			echo json_encode($data);
 		} else {
 			echo "no Id set";
 		}
