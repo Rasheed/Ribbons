@@ -26,8 +26,23 @@
       </ul>
     </nav>
     <div class="inner-w">
-      <!-- This is supposed to be ribbon -->
-  	  <img src="https://lh4.googleusercontent.com/-MpYP8v5LFYk/UpwkFj09NjI/AAAAAAAAgv4/A4aegtvObzs/s652-fcrop64=1,169d09e6febdce7e/IMG_1272.jpg"/>
+  	  <span id="ribbonimage">
+        <img src="" id="rimage">
+      </span>
+      <div>
+      <div id="ribbonpic">
+        <form action="helpers/uploadRibbon.php" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="Id" id="ruserid">
+          <input type="file" name="uploadedfile"><br>
+          <input type="submit" value="Upload Image">
+        </form>
+        <div class="progress">
+          <div class="bar" id="ribbonbar"></div >
+          <div class="percent" id="ribbonpercent">0%</div >
+        </div>
+        <div id="status2"></div>
+      </div>
+      </div>
     	<br>
     	<div class="column column-a">	
     	  <span class="user">

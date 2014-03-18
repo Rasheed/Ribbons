@@ -244,11 +244,25 @@ p{
 #profilepic {
 	display: block; margin: 20px auto; background: #fff; border-radius: 10px; padding: 15px
 }
+#ribbonpic {
+	display: block; margin: 20px auto; background: #fff; border-radius: 10px; padding: 15px
+}
+
 .progress { position:relative; width:150px; border: 1px solid #ddd; padding: 1px; border-radius: 3px; }
 .bar { background-color: #9ed29e; width:0%; height:15px; border-radius: 3px; }
 .percent { position:absolute; display:inline-block; top:0px; left:48%;}
 
 #pimage {
+	height:150px ;
+	width :150px ;
+}
+
+#rimage {
+	height:150px ;
+	width :900px ;
+}
+
+#ribbonpic {
 	height:150px ;
 	width :150px ;
 }

@@ -32,6 +32,13 @@
 				$data["hasProfilePic"] = true;  
 				$data["picturePath"] = $return[0]["ProfilePicture"];
 			}
+			if(!isset($return[0]["RibbonPicture"])) {
+				$data["hasRibbonPic"] = false;  
+			} else {
+				$data["hasRibbonPic"] = true;  
+				$data["rpicturePath"] = $return[0]["RibbonPicture"];
+			}
+
 			echo json_encode($data);
 		} else {
 			echo "no Id set";

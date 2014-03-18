@@ -15,6 +15,7 @@ $(function() {
 
 	var userId=sessionStorage.getItem('userId');
 	$('#userId').attr('value', userId);
+	$('#ruserid').attr('value', userId);
 	console.log(userId);
 
 	$.ajax({
@@ -36,11 +37,14 @@ $(function() {
 				$('#gender').html(gender);
 				$('#aboutme').html(aboutme);
 				if(data.hasProfilePic) {
-					//alert("<img src='"+data.picturePath+"'/>");
 					$('#pimage').attr("src",data.picturePath);
 				} else {
-					//alert("No pictures!!");
 					$('#profileimage').text('No Profile Picture Available.');
+				}
+				if(data.hasRibbonPic) {
+					$('#rimage').attr("src",data.rpicturePath);
+				} else {
+					$('#ribbonimage').text('No Ribbon Picture Available.');
 				}
 			},
 			error: function(xhr, desc, err) {
@@ -163,6 +167,9 @@ $(function() {
 	var profilebar = $('#profilebar');
 	var profilepercent = $('#profilepercent');
 	var status1 = $('#status1');
+	var ribbonbar = $('#ribbonbar');
+	var ribbonpercent = $('#ribbonpercent');
+	var status2 = $('#status2');
 
 	$('#profilepic').ajaxForm({
     	beforeSend: function() {
@@ -184,6 +191,30 @@ $(function() {
         		$('#pimage').attr("src",xhr.responseText);
         	} else {
         		status1.html(xhr.responseText);
+        	}
+    	}
+	});
+
+	$('#ribbonpic').ajaxForm({
+    	beforeSend: function() {
+        	status2.empty();
+        	var percentVal = '0%';
+        	ribbonbar.width(percentVal);
+        	ribbonpercent.html(percentVal);
+    	},
+    	uploadProgress: function(event, position, total, percentComplete) {
+        	var percentVal = percentComplete + '%';
+        	ribbonbar.width(percentVal)
+        	ribbonpercent.html(percentVal);
+    	},
+    	complete: function(xhr) {
+     		ribbonbar.width("100%");
+    		ribbonpercent.html("100%");
+    		if(xhr.responseText[0]=='.') {
+        		status2.html("The file has been uploaded successfully.");
+        		$('#rimage').attr("src",xhr.responseText);
+        	} else {
+        		status2.html(xhr.responseText);
         	}
     	}
 	});
