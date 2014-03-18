@@ -4,8 +4,9 @@
 	$conn = $DB->getConn();
 	$id = $_POST['Id'];
 	$target_path = "../uploads/".$id."/profile/";
-	$date = date('Y-m-d-H:i:s');
+	$date = date('Y-m-d-H-i-s');
 	$target_path = $target_path . basename($date);
+	$data = array();
 	
 	if (!file_exists("../uploads/".$id."/profile")) {
     	mkdir("../uploads/".$id."/profile", 0777, true);
@@ -24,12 +25,15 @@
 	&& in_array($extension, $allowedExts)) {
 		if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
 	    	echo "The file ". basename($_FILES['uploadedfile']['name'])." has been uploaded";
+
 		} else{
 	    	echo "There was an error uploading the file, please try again!";
 		}
 	} else {
 	  echo "Invalid file";
 	}
+
+	
 
 	$sql_insert = "INSERT INTO albums (UserId,Name,LocationId,CreationDate) VALUES (?,'Profile',NULL,?);";
  	$stmt = $conn->prepare($sql_insert);

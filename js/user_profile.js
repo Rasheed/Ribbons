@@ -179,7 +179,7 @@ $(function() {
     	complete: function(xhr) {
      		profilebar.width("100%");
     		profilepercent.html("100%");
-        	status1.html(xhr.responseText);
+        	status1.html(xhr);
     	}
 	});
 });   
