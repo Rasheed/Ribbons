@@ -1,0 +1,95 @@
+body {
+	background: rgb(246,248,249); /* Old browsers */
+	background: -moz-linear-gradient(left,  rgba(246,248,249,1) 0%, rgba(229,235,238,1) 35%, rgba(215,222,227,1) 61%, rgba(245,247,249,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(246,248,249,1)), color-stop(35%,rgba(229,235,238,1)), color-stop(61%,rgba(215,222,227,1)), color-stop(100%,rgba(245,247,249,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 35%,rgba(215,222,227,1) 61%,rgba(245,247,249,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 35%,rgba(215,222,227,1) 61%,rgba(245,247,249,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 35%,rgba(215,222,227,1) 61%,rgba(245,247,249,1) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 35%,rgba(215,222,227,1) 61%,rgba(245,247,249,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=1 ); /* IE6-9 */
+
+}
+/* Navigation */
+nav{
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: block;
+  height: auto;
+  min-width: 10px;
+  width: 10px;
+  
+  transition-delay: 0s;
+  transition-duration: 0.4s;
+  transition-property: all;
+  transition-timing-function: line;
+}
+
+nav:hover{
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: auto;
+  width: 150px;
+  background-color: #9ED29E;
+}
+
+nav a{
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity:0;
+  margin-left: 0em;
+}
+
+nav:hover a{
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  opacity:1;
+}
+
+li{
+	display: block;
+	padding-top: 0.2em;
+	height: 2.5em;
+	margin-left: 0;
+	text-align: left;
+}
+
+svg, a{
+  display: inline-block;
+}
+
+
+a{
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #151515;
+  transition-delay: 0s;
+  transition-duration: 0.36s;
+  transition-property: all;
+  transition-timing-function: line;
+}
+
+nav a:hover{
+  font-weight: 400;
+}
+
+nav, nav:hover{
+    padding: 1em;
+}
+
+nav a{
+  text-indent: -200px;
+}
+
+nav:hover a{
+  text-indent:0px;
+  color: #EEFFE5;
+}
+
+svg, a{
+  vertical-align: top;
+}
+/* End Navigation */
