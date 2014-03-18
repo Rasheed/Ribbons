@@ -5,7 +5,7 @@
 	if(isset($_POST['username'], $_POST['password'])) {
 	  $username = $_POST['username'];
 	  $password = $_POST['password'];
-	  $sql_select = "SELECT Id, UserLocationId, WorkplaceId, EducationId, ProfilePicture, RibbonPicture FROM users WHERE Email = ? AND Password = ?";
+	  $sql_select = "SELECT Id, LocationId, WorkplaceId, EducationId, ProfilePicture, RibbonPicture FROM users WHERE Email = ? AND Password = ?";
 	  $stmt = $conn->prepare($sql_select);
 	  $stmt->execute(array($username, $password));
 	  $users = $stmt->fetchAll(PDO::FETCH_ASSOC); 

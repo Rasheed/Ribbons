@@ -46,6 +46,18 @@ $(function() {
 				} else {
 					$('#ribbonimage').text('No Ribbon Picture Available.');
 				}
+				for (var i = 0; i < data.LocationIds.length-1; ++i) {
+					locationls.push(data.LocationIds[i]);
+    				$('#locationlist').append('<li id="locationItem"><img src="js/delete.png">'+'   '+data.LocationIds[i]+'</li>');
+				}
+				for (var i = 0; i < data.EducationIds.length-1; ++i) {
+					educationls.push(data.EducationIds[i]);
+    				$('#educationlist').append('<li id="educationItem"><img src="js/delete.png">'+'   '+data.EducationIds[i]+'</li>');
+				}
+				for (var i = 0; i < data.WorkIds.length-1; ++i) {
+					workls.push(data.WorkIds[i]);
+    				$('#worklist').append('<li id="workItem"><img src="js/delete.png">'+'   '+data.WorkIds[i]+'</li>');
+				}
 			},
 			error: function(xhr, desc, err) {
 			  console.log(xhr);
