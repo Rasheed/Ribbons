@@ -6,14 +6,6 @@
 	$target_path = "../uploads/".$id."/profile/";
 	$date = date('Y-m-d-H-i-s');
 	$target_path = $target_path . basename($date);
-	
-	if (!file_exists("../uploads/".$id."/profile")) {
-		mkdir("../uploads/".$id."/profile", 0777, true);
-		$sql_insert = "INSERT INTO albums (UserId,Name,LocationId,CreationDate) VALUES (?,'Profile',NULL,?);";
- 		$stmt = $conn->prepare($sql_insert);
- 		$stmt->execute(array($id, $date));			 
-		$photoId = $conn->lastInsertId();
-	}
 
 	$allowedExts = array("gif", "jpeg", "jpg", "png");
 	$temp = explode(".", $_FILES["uploadedfile"]["name"]);
@@ -27,6 +19,26 @@
 	&& ($_FILES["uploadedfile"]["size"] < 5000000)
 	&& in_array($extension, $allowedExts)) {
 		if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
+			$find_album = "SELECT Id FROM albums WHERE UserId = ? AND Name = 'Profile'";
+			$album_stmt = $conn->prepare($find_album);
+			$album_stmt->execute(array($id));
+			$result = $album_stmt->fetchAll(PDO::FETCH_ASSOC); 
+			if(count($result)==0){ 
+				mkdir("../uploads/".$id."/profile", 0777, true);
+				$sql_insert = "INSERT INTO albums (UserId,Name,LocationId,CreationDate) VALUES (?,'Profile',NULL,?);";
+		 		$stmt = $conn->prepare($sql_insert);
+		 		$stmt->execute(array($id, $date));			 
+				$albumId = $conn->lastInsertId();
+			} else {
+				$albumId = $result[0]['Id'];
+			}
+			$photo_insert = "INSERT INTO photos (AlbumId,Path,Name,CreationDate) VALUES (?,?,'Profile',?);";
+			$photo_stmt = $conn->prepare($photo_insert);
+			$photo_stmt->execute(array($albumId, $target_path, $date));	
+
+			$user_update = "UPDATE users SET ProfilePicture = ? WHERE Id = ?";
+			$user_stmt = $conn->prepare($user_update);
+			$user_stmt->execute(array($target_path, $id));
 	    	echo $target_path;
 
 		} else{
@@ -36,7 +48,5 @@
 	  echo "Invalid file";
 	}
 	
-	$photo_insert = "INSERT INTO photos (AlbumId,Path,Name,CreationDate) VALUES (?,?,'Profile',?);";
-	$photo_stmt = $conn->prepare($photo_insert);
-	$photo_stmt->execute(array($photoId, $target_path, $date));	
+	
 ?>
