@@ -179,7 +179,16 @@ $(function() {
     	complete: function(xhr) {
      		profilebar.width("100%");
     		profilepercent.html("100%");
-        	status1.html(xhr);
+<<<<<<< HEAD
+    		if(xhr.responseText[0]=='.') {
+        		status1.html("The file has been uploaded successfully.");
+        		$('#pimage').attr("src",xhr.responseText);
+        	} else {
+        		status1.html(xhr.responseText);
+        	}
+=======
+        	status1.html(xhr.responseText);
+>>>>>>> FETCH_HEAD
     	}
 	});
 });   

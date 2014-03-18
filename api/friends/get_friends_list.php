@@ -5,7 +5,7 @@
 	if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 		if (isset($_GET['id'])) {
 			$id = $_GET['id'];
-			$sql_select = "SELECT UserId2, FirstName, LastName, CurrentRibbonPhoto, CurrentProfilePhoto, LocationId, WorkplaceId, EducationId FROM friendship, users WHERE UserId1 = ? AND UserId2 = Id";
+			$sql_select = "SELECT FirstName, LastName, Email, CurrentRibbonPhoto, CurrentProfilePhoto FROM friendship, users WHERE UserId1 = ? AND UserId2 = Id";
 			$stmt = $conn->prepare($sql_select);
 			$stmt->execute(array($id));
 			$return = $stmt->fetchAll(PDO::FETCH_ASSOC); 

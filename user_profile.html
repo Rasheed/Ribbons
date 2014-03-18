@@ -4,19 +4,26 @@
     <script src="http://malsup.github.com/jquery.form.js"></script>
     <script type="text/javascript" src="js/user_profile.js"></script> 
 	<link href="css/userhome.css" rel="stylesheet" type="text/css">
+	<link href="css/navigation.css" rel="stylesheet" type="text/css">
+
 
 	<style>
-body { padding: 30px;
-background-image: url(http://backgrounddesignz.com/wp-content/uploads/2013/12/ws_Minimal_Gray_to_White_Gradient_1920x1200.jpg); }
-form { display: block; margin: 20px auto; background: #eee; border-radius: 10px; padding: 15px }
-
 .progress { position:relative; width:400px; border: 1px solid #ddd; padding: 1px; border-radius: 3px; }
 .bar { background-color: #B4F5B4; width:0%; height:20px; border-radius: 3px; }
 .percent { position:absolute; display:inline-block; top:3px; left:48%; }
 </style>
 
-	<h1> Profile Information </h1><br>
-  <nav>
+	  <style>
+      body { padding: 30px }
+      form { display: block; margin: 20px auto; background: #eee; border-radius: 10px; padding: 15px }
+
+      .progress { position:relative; width:400px; border: 1px solid #ddd; padding: 1px; border-radius: 3px; }
+      .bar { background-color: #B4F5B4; width:0%; height:20px; border-radius: 3px; }
+      .percent { position:absolute; display:inline-block; top:3px; left:48%; }
+    </style>
+  </head>
+  <body>
+    <nav>
           <ul>
             <li>
               <div align="left"><a href="#"><img src="img/side-navigation-menu_home.svg" alt="Home">Home</a></div>
@@ -25,7 +32,7 @@ form { display: block; margin: 20px auto; background: #eee; border-radius: 10px;
               <div align="left"><a href="#"><img src="img/side-navigation-menu_profile.svg" alt="Profile">Profile</a></div>
             </li>
             <li>
-              <div align="left"><a href="#"><img src="img/side-navigation-menu_friends.svg" alt="Friends">Friends</a></div>
+              <div align="left"><a href="friends.html"><img src="img/side-navigation-menu_friends.svg" alt="Friends">Friends</a></div>
             </li>
             <li>
               <div align="left"><a href="#"><img src="img/side-navigation-menu_messages.svg" alt="Messages">Messages</a></div>
@@ -53,7 +60,7 @@ form { display: block; margin: 20px auto; background: #eee; border-radius: 10px;
      	</div>
 	</img>
 
-	
+
     <div class="column column-b">
 	<div id='name'> First and Last Name </div><br>
 	<div id='email'> Email </div><br>
@@ -122,5 +129,25 @@ form { display: block; margin: 20px auto; background: #eee; border-radius: 10px;
 
     <div id="status1"></div>
 
+    <br>Ribbon Picture:<br>
+	<form action="helpers/upload.php" method="post" enctype="multipart/form-data" id="ribbonpic">
+        <input type="file" name="uploadedfile"><br>
+        <input type="submit" value="Upload File to Server">
+    </form>
+
+    <div class="progress">
+        <div class="bar" id="ribbonbar"></div >
+        <div class="percent" id="ribbonpercent">0%</div >
+    </div>
+
+    <div id="status2"></div>
+    </div>
+    </div>
+    </dir>
+    
+
+
+
+  <!--Show all posts if user fully registered.-->
   </body>
-</html>   
+</html> 
