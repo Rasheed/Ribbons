@@ -6,7 +6,7 @@ var searchIndex = [];
       			url: 'api/friends/get_users_names.php',
       			type: 'GET',
         		success: function(data) {
-						console.log(data);
+						//console.log(data);
 						var names = JSON.parse(data);
 						for(var i = 0; i<names.length;i++) {
 							searchIndex.push(names[i].FullName);
@@ -78,7 +78,19 @@ var searchIndex = [];
 			  + terms 
 			  +'</strong>');
 		li.onclick = function (e) {
-			console.log(e.target);
+			$.ajax({
+				async: true,
+				url: 'api/friends/find_friend_from_search.php',
+				type: 'GET',
+				data: {'searchField': e.target.textContent},
+				success: function(data) {
+					console.log(data);
+				},
+				error: function(xhr, desc, err) {
+					console.log(xhr);
+					console.log('Details: ' + desc + '\nError:' + err);
+				}
+			});	
 		};
 		
 		li.innerHTML = result;
@@ -96,16 +108,4 @@ var searchIndex = [];
 	};
 	  
 	input.addEventListener("keyup", search, false);
-	
-	$('.term-list hidden').each(function(clickable) {
-		var list = clickable.getElements('li');
-
-		list.addEvent('click', function() {
-			console.log("clik");
-			var link = this.getElement('a');
-			if(this.getFirst('a')) {
-				window.location = link
-			}
-		});
-	});
 });

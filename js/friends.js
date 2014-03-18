@@ -1,7 +1,7 @@
 $(document).ready(function(){				
 
-		var userId=1;//sessionStorage.getItem('userId');
-		console.log(userId);
+		var userId=11;//sessionStorage.getItem('userId');
+		//console.log(userId);
 		$.ajax({
 				async: false,
       			url: 'api/friends/get_friends.php',
@@ -15,9 +15,9 @@ $(document).ready(function(){
 							});
 					$("#main-wrapper").append(friendnumber);
           			for(var i = 0; i < friends.length; i++){
-						console.log(friends[i]);
+						//console.log(friends[i]);
 						var bodytext = $('<p>', {
-							html: ''//friends[i].toString()
+							html: 'You are friends'//friends[i].toString()
 							});
 						var email = $('<h4>', {
 							html: friends[i].Email 
@@ -39,7 +39,7 @@ $(document).ready(function(){
 						ribbon.append(ribbonhovertext);
 						var profileimage = $('<div/>', {
 							class: 'profile-image ribbon-text',
-							style: "background-image:url('http://blog.zap2it.com/pop2it/jennifer-lawrence-miss-dior-thumbnail.jpg'); background-size: auto;"
+							style: "background-image:url('http://blog.zap2it.com/pop2it/jennifer-lawrence-miss-dior-thumbnail.jpg'); background-size: cover; background-repeat:no-repeat;"
 							});
 						ribbon.append(profileimage); 
 						ribbon.click(function(e) {
@@ -54,13 +54,13 @@ $(document).ready(function(){
         		}
     		});
 						
-		$.ajax({
+		/*$.ajax({
 				async: false,
       			url: 'api/friends/get_friends_of_friends.php',
       			type: 'GET',
       			data: {'id': userId},
         		success: function(data) {
-					console.log(data);
+					//console.log(data);
 					var friends = JSON.parse(data);
 					if(friends.length == 0) { 
 						return;
@@ -70,7 +70,7 @@ $(document).ready(function(){
 							});
 					$("#main-wrapper").append(friendnumber);
           			for(var i = 0; i < friends.length; i++){
-						console.log(friends[i]);
+						//console.log(friends[i]);
 						var bodytext = $('<p>', {
 							html: ''//friends[i].toString()
 							});
@@ -118,7 +118,7 @@ $(document).ready(function(){
           			console.log(xhr);
           			console.log('Details: ' + desc + '\nError:' + err);
         		}
-    		});
+    		});*/
 
 		var loading = function(e) {
 			  e.preventDefault();
@@ -136,12 +136,12 @@ $(document).ready(function(){
 					type: 'POST',
 					data: {'id1': userId, 'id2': newfriendid},
 					success: setTimeout(function(data) {
-						console.log(data);
+						//console.log(data);
 						location.reload();
 					}, 2000),
 					error: function(xhr, desc, err) {
-						console.log(xhr);
-						console.log('Details: ' + desc + '\nError:' + err);
+						//console.log(xhr);
+						//console.log('Details: ' + desc + '\nError:' + err);
 					}
 				});
 			  e.target.removeEventListener('click', loading);

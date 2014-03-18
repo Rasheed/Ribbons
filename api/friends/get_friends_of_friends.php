@@ -5,7 +5,7 @@
 	if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 		if (isset($_GET['id'])) {
 			$id = $_GET['id'];
-			$sql_select = "SELECT DISTINCT u.Id, u.FirstName, u.LastName, u.Email, u.CurrentProfilePhoto, u.CurrentRibbonPhoto
+			$sql_select = "SELECT DISTINCT u.Id, u.FirstName, u.LastName, u.Email
 							FROM friendship f, users u
 							WHERE f.UserId1 IN (
 								SELECT f2.UserId2
