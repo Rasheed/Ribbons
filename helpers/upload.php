@@ -6,10 +6,13 @@
 	$target_path = "../uploads/".$id."/profile/";
 	$date = date('Y-m-d-H-i-s');
 	$target_path = $target_path . basename($date);
-	$data = array();
 	
 	if (!file_exists("../uploads/".$id."/profile")) {
-    	mkdir("../uploads/".$id."/profile", 0777, true);
+		mkdir("../uploads/".$id."/profile", 0777, true);
+		$sql_insert = "INSERT INTO albums (UserId,Name,LocationId,CreationDate) VALUES (?,'Profile',NULL,?);";
+ 		$stmt = $conn->prepare($sql_insert);
+ 		$stmt->execute(array($id, $date));			 
+		$photoId = $conn->lastInsertId();
 	}
 
 	$allowedExts = array("gif", "jpeg", "jpg", "png");
@@ -32,13 +35,6 @@
 	} else {
 	  echo "Invalid file";
 	}
-
-	
-
-	$sql_insert = "INSERT INTO albums (UserId,Name,LocationId,CreationDate) VALUES (?,'Profile',NULL,?);";
- 	$stmt = $conn->prepare($sql_insert);
- 	$stmt->execute(array($id, $date));			 
-	$photoId = $conn->lastInsertId();
 	
 	$photo_insert = "INSERT INTO photos (AlbumId,Path,Name,CreationDate) VALUES (?,?,'Profile',?);";
 	$photo_stmt = $conn->prepare($photo_insert);
