@@ -1,75 +1,65 @@
 <html>
+
   <head>
     <script type="text/javascript" src="js/jquery.2.0.2.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
     <script type="text/javascript" src="js/user_profile.js"></script> 
-	<link href="css/userhome.css" rel="stylesheet" type="text/css">
-	<link href="css/navigation.css" rel="stylesheet" type="text/css">
-
-
-	<style>
-.progress { position:relative; width:400px; border: 1px solid #ddd; padding: 1px; border-radius: 3px; }
-.bar { background-color: #B4F5B4; width:0%; height:20px; border-radius: 3px; }
-.percent { position:absolute; display:inline-block; top:3px; left:48%; }
-</style>
-
-	  <style>
-      body { padding: 30px }
-      form { display: block; margin: 20px auto; background: #eee; border-radius: 10px; padding: 15px }
-
-      .progress { position:relative; width:400px; border: 1px solid #ddd; padding: 1px; border-radius: 3px; }
-      .bar { background-color: #B4F5B4; width:0%; height:20px; border-radius: 3px; }
-      .percent { position:absolute; display:inline-block; top:3px; left:48%; }
-    </style>
+	  <link href="css/userhome.css" rel="stylesheet" type="text/css">
+	  <link href="css/navigation.css" rel="stylesheet" type="text/css">
   </head>
+
   <body>
     <nav>
-          <ul>
-            <li>
-              <div align="left"><a href="#"><img src="img/side-navigation-menu_home.svg" alt="Home">Home</a></div>
-            </li>
-            <li>
-              <div align="left"><a href="#"><img src="img/side-navigation-menu_profile.svg" alt="Profile">Profile</a></div>
-            </li>
-            <li>
-              <div align="left"><a href="friends.html"><img src="img/side-navigation-menu_friends.svg" alt="Friends">Friends</a></div>
-            </li>
-            <li>
-              <div align="left"><a href="#"><img src="img/side-navigation-menu_messages.svg" alt="Messages">Messages</a></div>
-            </li>
-          </ul>
-  </nav>
-       <div class="inner-w">
-  		<img class="block" src="https://lh4.googleusercontent.com/-MpYP8v5LFYk/UpwkFj09NjI/AAAAAAAAgv4/A4aegtvObzs/s652-fcrop64=1,169d09e6febdce7e/IMG_1272.jpg" class="back" alt="" />
-   
-    	<h3> Profile Information </h3><br>
+      <ul>
+        <li>
+          <div align="left"><a href="#"><img src="img/side-navigation-menu_home.svg" alt="Home">Home</a></div>
+        </li>
+        <li>
+          <div align="left"><a href="#"><img src="img/side-navigation-menu_profile.svg" alt="Profile">Profile</a></div>
+        </li>
+        <li>
+          <div align="left"><a href="friends.html"><img src="img/side-navigation-menu_friends.svg" alt="Friends">Friends</a></div>
+        </li>
+        <li>
+          <div align="left"><a href="#"><img src="img/side-navigation-menu_messages.svg" alt="Messages">Messages</a></div>
+        </li>
+      </ul>
+    </nav>
+    <div class="inner-w">
+      <!-- This is supposed to be ribbon -->
+  	  <img src="https://lh4.googleusercontent.com/-MpYP8v5LFYk/UpwkFj09NjI/AAAAAAAAgv4/A4aegtvObzs/s652-fcrop64=1,169d09e6febdce7e/IMG_1272.jpg"/>
+    	<br>
     	<div class="column column-a">	
-    	  <span class="user"><img src="https://lh3.googleusercontent.com/-7jdZCLeEaho/AAAAAAAAAAI/AAAAAAAAZIw/GMkOu6gF6SA/s120-c/photo.jpg" class="avatar" alt="" /></span>
-    
-          <div class="user">
-                <div class="usr-info">
-                      <div class="rna KXa Xia" guidedhelpid="profile_name" id="profile_name"></div>
-                    
-                      <div class="circle-button">
-                        <div><h5><span class="icon">&#9675;</span> <span class="icon-txt">2 circles</h5></span></div>
-                      </div>
-            
-                      <div class="followers"><h5>55,467 have him in circles</h5></div>
-                </div>
+    	  <span class="user">
+          <span id="profileimage">
+            <img src="" id="pimage">
+          </span>
+        </span>
+        <div class="user">
+          <div class="usr-info">
+            <div id="profilepic">
+              <form action="helpers/upload.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="Id" id="userId">
+                <input type="file" name="uploadedfile" value="Change Picture"><br>
+                <input type="submit" value="Upload Image">
+              </form>
+              <div class="progress">
+                <div class="bar" id="profilebar"></div >
+                <div class="percent" id="profilepercent">0%</div >
+              </div>
+              <div id="status1"></div>
             </div>
+          </div>
+        </div>
      	</div>
-	</img>
-
-
-    <div class="column column-b">
-	<div id='name'> First and Last Name </div><br>
-	<div id='email'> Email </div><br>
-	<div id='bday'> Birthday </div><br>
-	<div id='gender'> Gender </div><br>
-
-	Location: <button type="button" id="location">Add Location</button><br>
-    <div id="locationform">
-        <form>
+      <div class="column column-b">
+	      <div id='name'> First and Last Name </div><br>
+	      <div id='email'> Email </div><br>
+	      <div id='bday'> Birthday </div><br>
+	      <div id='gender'> Gender </div><br>
+        Location: <button type="button" id="location">Add Location</button><br>
+        <div id="locationform">
+          <form>
           	<select id="loctype">
             	<option value="from">from</option>
             	<option value="living">living</option>
@@ -77,65 +67,42 @@
           	Location: <input type="text" id="locid"><br>
           	<button type="button" id="locationf">Save Location</button>
           	<button type="button" id="cancelloc">Cancel</button><br>
-        </form>
-    </div>
-    Locations entered so far:<br>
-    <ul id="locationlist"></ul>
+          </form>
+        </div>
+        Locations entered so far:<br>
+        <ul id="locationlist"></ul>
 
-    Education: <button type="button" id="education">Add Education</button><br>
-    <div id="educationform">
-        <form>
+        Education: <button type="button" id="education">Add Education</button><br>
+        <div id="educationform">
+          <form>
           	Name of School: <input type="text" id="eduid"><br>
           	Start Date: <input type="date" id="estart"><br>
           	Graduation Date: <input type="date" id="eend"><br>
           	Course: <input type="text" id="ecourse"><br>
           	<button type="button" id="educationf">Save Education</button>
           	<button type="button" id="canceledu">Cancel</button><br>
-        </form>
-    </div>
-    Education entered so far:<br>
-    <ul id="educationlist"></ul>
+          </form>
+        </div>
+        Education entered so far:<br>
+        <ul id="educationlist"></ul>
 
-    Work: <button type="button" id="work">Add Work</button><br>
-    <div id="workform">
-        <form>
+        Work: <button type="button" id="work">Add Work</button><br>
+        <div id="workform">
+          <form>
           	Work Place: <input type="text" id="workid"><br>
           	Start Date: <input type="date" id="wstart"><br>
           	End Date: <input type="date" id="wend"><br>
           	Position: <input type="text" id="wposition"><br>
           	<button type="button" id="workf">Save Work</button>
           	<button type="button" id="cancelwork">Cancel</button><br>
-        </form>
+          </form>
+        </div>
+        Work entered so far:<br>
+        <ul id="worklist"></ul>
+
+        <textarea id="aboutme" rows="4" cols="50">Enter a description of yourself that you want to appear on your profile here...</textarea><br><br>
+      </div>
     </div>
-    Work entered so far:<br>
-    <ul id="worklist"></ul>
-
-    <textarea id="aboutme" rows="4" cols="50">Enter a description of yourself that you want to appear on your profile here...</textarea><br><br>
-
-	Profile Picture:<br>
-  <span id="profileimage">
-    <img src="" id="pimage">
-  </span>
-	<form action="helpers/upload.php" method="post" enctype="multipart/form-data" id="profilepic">
-        <input type="hidden" name="Id" id="userId">
-        <input type="file" name="uploadedfile"><br>
-        <input type="submit" value="Upload File to Server">
-  </form>
-
-    <div class="progress">
-        <div class="bar" id="profilebar"></div >
-        <div class="percent" id="profilepercent">0%</div >
-    </div>
-
-    <div id="status1"></div>
-
-    </div>
-    </div>
-    </dir>
-    
-
-
-
-  <!--Show all posts if user fully registered.-->
-  </body>
+  </dir>
+</body>
 </html> 

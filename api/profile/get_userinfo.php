@@ -6,7 +6,7 @@
 		if (isset($_GET['id'])) {
 			$data = array();
 			$id = $_GET['id'];
-			$sql_select = "SELECT u.Id, u.FirstName, u.LastName, u.Birthday, u.Email, u.Gender, u.CurrentRibbonPhoto, u.CurrentProfilePhoto, u.AboutMe, w.Name , w.Position, e.Name AS EduName, e.StartDate, e.EndDate, e.Course
+			$sql_select = "SELECT u.Id, u.FirstName, u.LastName, u.Birthday, u.Email, u.Gender, u.AboutMe, u.ProfilePicture, u.RibbonPicture, w.Name , w.Position, e.Name AS EduName, e.StartDate, e.EndDate, e.Course
 							FROM users u, user_locations ul, workplace w, education e
 							WHERE u.Id = ? AND u.UserLocationId = ul.UserLocationId AND w.WorkplaceId = u.WorkplaceId AND e.EducationId = u.EducationId;";
 			$stmt = $conn->prepare($sql_select);
@@ -18,8 +18,6 @@
 			$data["Birthday"] = $return[0]["Birthday"];
 			$data["Email"] = $return[0]["Email"];
 			$data["Gender"] = $return[0]["Gender"];
-			$data["CurrentRibbonPhoto"] = $return[0]["CurrentRibbonPhoto"];
-			$data["CurrentProfilePhoto"] = $return[0]["CurrentProfilePhoto"];
 			$data["AboutMe"] = $return[0]["AboutMe"];
 			$data["Name"] = $return[0]["Name"];
 			$data["Position"] = $return[0]["Position"];
@@ -28,17 +26,11 @@
 			$data["EndDate"] = $return[0]["EndDate"];
 			$data["Course"] = $return[0]["Course"];
 
-			$pic_select = "SELECT a.Id, p.Path 
-						   FROM albums a, photos p
-						   WHERE a.UserId = ? AND a.Name='Profile' AND p.AlbumId=a.Id";
-			$stmt_two = $conn->prepare($pic_select);
-			$stmt_two->execute(array($id));
-			$profilepic = $stmt_two->fetchAll(PDO::FETCH_ASSOC); 
-			if(count($profilepic) == 0) {
+			if(!isset($return[0]["ProfilePicture"])) {
 				$data["hasProfilePic"] = false;  
 			} else {
 				$data["hasProfilePic"] = true;  
-				$data["picturePath"] = $profilepic[count($profilepic)-1]["Path"];
+				$data["picturePath"] = $return[0]["ProfilePicture"];
 			}
 			echo json_encode($data);
 		} else {

@@ -82,7 +82,6 @@ p{
   margin-bottom:auto;
   max-width: 56em;
   padding: 0.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.15);
   text-align: center;
   height:auto;
 }
@@ -241,5 +240,17 @@ p{
 	marign-left:auto;
 	margin-right:auto;
 }
-
 /*end of img*/
+#profilepic {
+	display: block; margin: 20px auto; background: #fff; border-radius: 10px; padding: 15px
+}
+.progress { position:relative; width:150px; border: 1px solid #ddd; padding: 1px; border-radius: 3px; }
+.bar { background-color: #9ed29e; width:0%; height:15px; border-radius: 3px; }
+.percent { position:absolute; display:inline-block; top:0px; left:48%;}
+
+#pimage {
+	height:150px ;
+	width :150px ;
+}
+
+
