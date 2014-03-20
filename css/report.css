@@ -1,0 +1,30 @@
+html {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+#main-body {
+  background: white;
+  width: 503px;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+#main-body .reports ul:last-of-type {
+  border-bottom: 0;
+}
+#main-body .reports ul {
+  list-style: none;
+  padding: 5px 10px;
+  border-bottom: solid 1px #aaaaaa;
+}
+#main-body .reports ul .text {
+  float: left;
+  margin-top: 5px;
+  line-height: 17px;
+  font-size: 0.9em;
+  width: 75%;
+  padding: 0 0 0 10px;
+}
+#main-body .reports ul .time {
+	font-size: 0.7em;
+	margin-top: 5px;
+}

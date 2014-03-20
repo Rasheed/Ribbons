@@ -30,7 +30,7 @@ $(function() {
           if(eval(data.isUser)) {
             if(eval(data.isComplete)) {
               sessionStorage.setItem('userId',data.Id);
-              window.location.href='home.html';
+              window.location.href='user_profile.html';
             } else {
               sessionStorage.setItem('userId',data.Id);
               window.location.href='user_profile.html';
