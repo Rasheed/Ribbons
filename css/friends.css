@@ -10,6 +10,7 @@
 }
 
 #circlemembers {
+	padding-top: 3%;
 	float: right; 
 	width: 80%;
 }
@@ -319,9 +320,9 @@ h2 {
   top: 30px;
   margin-left: -20px;
   padding: 10px;
-  width: 200px;
+  width: 100%;
   background: #e74c3c;
-  text-indent: 50px;
+  text-indent: 10%;
   box-shadow: 1px 1px 2px #000;
 }
 .page .first:after {
