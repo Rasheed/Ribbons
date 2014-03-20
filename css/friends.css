@@ -307,30 +307,6 @@ h2 {
 	float: left;
 }
 
-
-.page {
-  background: #FFFFFFFF;
-}
-.page .first {
-  position: relative;
-  top: 30px;
-  margin-left: -20px;
-  padding: 10px;
-  width: 100%;
-  background: #e74c3c;
-  text-indent: 10%;
-  box-shadow: 1px 1px 2px #000;
-}
-.page .first:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 0;
-  top: 101%;
-  border-right: 19px solid #86281e;
-  border-bottom: 10px solid transparent;
-}
 .circle {
   border-radius: 100%;
   cursor: pointer;

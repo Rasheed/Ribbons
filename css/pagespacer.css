@@ -29,6 +29,30 @@ hr.fancy-line, hr.fancy-line:before {
     background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
 }
 
-body, hr.fancy-line:after {
+hr.fancy-line:after {
     background: #f4f4f4;
+}
+
+.page {
+  background: #FFFFFFFF;
+}
+.page .first {
+  position: relative;
+  top: 0px;
+  margin-left: -20px;
+  padding: 10px;
+  width: 100%;
+  background: #e74c3c;
+  text-indent: 10%;
+  box-shadow: 1px 1px 2px #000;
+}
+.page .first:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 101%;
+  border-right: 19px solid #86281e;
+  border-bottom: 10px solid transparent;
 }
