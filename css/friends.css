@@ -1,6 +1,6 @@
 
 /* Main Content */
-#circle-wrapper, #main-wrapper { width: 85%; margin: 0 auto; z-index:-1; padding-bottom:1cm;}
+#circle-wrapper, #main-wrapper { float: right; width: 85%; padding-right: 1cm; margin: 0 auto; z-index:-1; padding-bottom:1cm;}
 #friendsoffriends { width: 85%; margin: 0 auto;}
 
 #mycircles {
@@ -308,7 +308,7 @@ h2 {
 }
 
 #circlemembers{
-	width: 70%;
+	width: 50%;
 	float: right;
 }
 
