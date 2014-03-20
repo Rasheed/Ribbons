@@ -1,5 +1,6 @@
 <?php
 	include("../../php/database.php");
+	include("../../php/log.php");
 	$DB = new Database();
 	$conn = $DB->getConn();
 	$date = date('Y-m-d H:i:s');
@@ -10,6 +11,8 @@
  		$stmt->execute(array($_GET['id'], $_GET['body'], $date));
  		$data = array("postAdded" => "true"); 
 		echo json_encode($data);
+		$log = new log($_GET['id']);
+		$log->a("Created a blog post");
 	}
 	function humanTiming ($time) {
 	    $time = time() - $time;

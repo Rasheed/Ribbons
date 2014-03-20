@@ -1,5 +1,6 @@
 <?php
 	include("../../../php/database.php");
+	include("../../../php/log.php");
 	$DB = new Database();
 	$conn = $DB->getConn();
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -11,6 +12,8 @@
  			$stmt->execute(array($id, $name));		
 			$out = array("circleCreated" => True); 
 			echo json_encode($out);
+			$log = new log($id);
+			$log->a("Created a circle \"".$name."\"");
 		} else {
 			echo "no Id set";
 		}
