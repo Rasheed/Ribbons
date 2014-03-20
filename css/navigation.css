@@ -1,12 +1,11 @@
 body {
-	background: rgb(246,248,249); /* Old browsers */
-	background: -moz-linear-gradient(left,  rgba(246,248,249,1) 0%, rgba(229,235,238,1) 35%, rgba(215,222,227,1) 61%, rgba(245,247,249,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(246,248,249,1)), color-stop(35%,rgba(229,235,238,1)), color-stop(61%,rgba(215,222,227,1)), color-stop(100%,rgba(245,247,249,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 35%,rgba(215,222,227,1) 61%,rgba(245,247,249,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 35%,rgba(215,222,227,1) 61%,rgba(245,247,249,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 35%,rgba(215,222,227,1) 61%,rgba(245,247,249,1) 100%); /* IE10+ */
-	background: linear-gradient(to right,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 35%,rgba(215,222,227,1) 61%,rgba(245,247,249,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=1 ); /* IE6-9 */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(63,76,107,0.04) 0%, rgba(63,76,107,0.04) 1%, rgba(63,76,107,0.1) 99%, rgba(63,76,107,0.1) 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(63,76,107,0.04)), color-stop(1%,rgba(63,76,107,0.04)), color-stop(99%,rgba(63,76,107,0.1)), color-stop(100%,rgba(63,76,107,0.1))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(63,76,107,0.04) 0%,rgba(63,76,107,0.04) 1%,rgba(63,76,107,0.1) 99%,rgba(63,76,107,0.1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  rgba(63,76,107,0.04) 0%,rgba(63,76,107,0.04) 1%,rgba(63,76,107,0.1) 99%,rgba(63,76,107,0.1) 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  rgba(63,76,107,0.04) 0%,rgba(63,76,107,0.04) 1%,rgba(63,76,107,0.1) 99%,rgba(63,76,107,0.1) 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  rgba(63,76,107,0.04) 0%,rgba(63,76,107,0.04) 1%,rgba(63,76,107,0.1) 99%,rgba(63,76,107,0.1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a3f4c6b', endColorstr='#1a3f4c6b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 }
 /* Navigation */

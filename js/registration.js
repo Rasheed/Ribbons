@@ -50,8 +50,8 @@ $(function() {
 			alert('You must include a birth date.');
 			return false;
 		}
-		gender = $('input[name=gender]:checked').val();
-		if(typeof gender === "undefined") {
+		gender = $('#gender').val();
+		if(!((gender == "Male") || (gender == "FEMALE"))) {
 			alert('You must pick a gender.');
 			return false;
 		}
