@@ -14,7 +14,7 @@
 			$out['circleid'] = $conn->lastInsertId();
 			$sql_insert = "INSERT INTO circlemembers (CircleId, UserId) VALUES (?,?);";
  			$stmt = $conn->prepare($sql_insert);
- 			$stmt->execute(array($id, $out['circleid']));		
+ 			$stmt->execute(array($out['circleid'],$id);		
 			echo json_encode($out);
 			$log = new log($id);
 			$log->a("Created a circle \"".$name."\"");
