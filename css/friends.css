@@ -6,13 +6,13 @@
 #mycircles {
 	align: center;
 	float: left; 
-	width: 48%;
+	width: 20%;
 }
 
 #circlemembers {
 	padding-top: 3%;
 	float: right; 
-	width: 80%;
+	width: 70%;
 }
 
 .wrapper { height: 375px; text-align: center; font-weight: bold; padding: 150px 0 0 0;} /* Height of nav bar added to total height: 300 */
@@ -307,10 +307,6 @@ h2 {
 	float: left;
 }
 
-#circlemembers{
-	width: 50%;
-	float: right;
-}
 
 .page {
   background: #FFFFFFFF;

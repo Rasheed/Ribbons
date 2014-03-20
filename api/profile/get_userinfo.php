@@ -65,7 +65,7 @@
 				$work_result[$i] = $work_return[0]["Name"].", ".$work_return[0]["Position"].", ".$work_return[0]["StartDate"].", ".$work_return[0]["EndDate"];
 			}
 			$data["WorkIds"] = $work_result;
-
+			
 			echo json_encode($data);
 		} else {
 			echo "no Id set";

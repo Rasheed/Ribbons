@@ -25,6 +25,7 @@ $(function() {
       data: {'username': username, 'password': password},
       dataType: 'json',
         success: function(data) {
+		  console.log(data);
           console.log(data.isUser);
           console.log(data.isComplete);
           if(eval(data.isUser)) {

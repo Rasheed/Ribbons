@@ -11,6 +11,8 @@
  			$stmt->execute(array($id1,$id2,$id2,$id1));		
 			$out = array("friendAdded" => True); 
 			echo json_encode($out);
+			$log = new log($id1);
+			$log->a("Became friends with ".$id2);
 		} else {
 			echo "no Id set";
 		}
