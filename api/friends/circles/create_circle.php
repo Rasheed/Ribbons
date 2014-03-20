@@ -6,7 +6,7 @@
 		if (isset($_POST['id'],$_POST['name'])) {
 			$id = $_POST['id'];
 			$name = $_POST['name'];
-			$sql_insert = "INSERT INTO circles (OwnerId, CircleName) VALUES (?,?);";
+			$sql_insert = "INSERT INTO circles (OwnerId, CircleName, CreationDate) VALUES (?,?,NOW());";
  			$stmt = $conn->prepare($sql_insert);
  			$stmt->execute(array($id, $name));		
 			$out = array("circleCreated" => True); 
