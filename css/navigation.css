@@ -24,6 +24,7 @@ nav{
   transition-duration: 0.4s;
   transition-property: all;
   transition-timing-function: line;
+  background-color:rgba(45,45,45,0.1);
 }
 
 nav:hover{

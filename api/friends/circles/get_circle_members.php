@@ -5,9 +5,9 @@
 	if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 		if (isset($_GET['circleid'])) {
 			$id = $_GET['circleid'];
-			$sql_select = "SELECT u.Id, U.FirstName, u.LastName, u.Email
-							FROM circlemembers cm, users u
-							WHERE cm.CircleId = ? AND cm.UserId = u.Id
+			$sql_select = "SELECT u.Id, U.FirstName, u.LastName, u.Email, c.CircleName
+							FROM circlemembers cm, users u, circles c
+							WHERE cm.CircleId = ? AND cm.UserId = u.Id AND cm.CircleId = c.CircleId
 							";
  			$stmt = $conn->prepare($sql_select);
  			$stmt->execute(array($id));		
