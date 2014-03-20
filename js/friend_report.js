@@ -11,8 +11,6 @@ $(function() {
 			success: function(data) {
 				for(var i=0; i<data.length; i++){
 					$('.reports').append('<ul class="entry"><li class="text">'+data[i]['text']+'</li><li class="time">'+data[i]['time']+'</li></ul>');
-					console.log(data[i]['text']);
-					console.log(data[i]['time']);
 				}
 			},
 			error: function(xhr, desc, err) {

@@ -64,6 +64,22 @@ $(function() {
 			  console.log('Details: ' + desc + '\nError:' + err);
 			}
 	});
+
+	$.ajax({
+		  url: 'api/blog/get_blog.php',
+		  type: 'GET',
+		  data: {'id': userId},
+		  dataType: 'json',
+			success: function(data) {
+				for(var i=0; i<data.length; i++){
+					$('.reports').append('<ul class="entry"><li class="text">'+data[i]['Body']+'</li><li class="time">'+data[i]['CreationDate']+'</li></ul>');
+				}
+			},
+			error: function(xhr, desc, err) {
+			  console.log(xhr);
+			  console.log('Details: ' + desc + '\nError:' + err);
+			}
+	});
 	
 	$('#location').on('click', function(e) {
 		e.preventDefault();
@@ -229,5 +245,26 @@ $(function() {
         		status2.html(xhr.responseText);
         	}
     	}
+	});
+
+	$('#add_post').on('click', function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		var body = $('#post').val();
+		$.ajax({
+		  url: 'api/blog/add_post.php',
+		  type: 'GET',
+		  data: {'id': userId, 'body':body},
+		  dataType: 'json',
+			success: function(data) {
+				if(data['postAdded']) {
+					$('.reports').prepend('<ul class="entry"><li class="text">'+body+'</li><li class="time">Just now</li></ul>');
+				}
+			},
+			error: function(xhr, desc, err) {
+			  console.log(xhr);
+			  console.log('Details: ' + desc + '\nError:' + err);
+			}
+	});
 	});
 });   
