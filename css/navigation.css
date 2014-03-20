@@ -19,7 +19,7 @@ nav{
   height: auto;
   min-width: 10px;
   width: 10px;
-  
+  z-index: 3;
   transition-delay: 0s;
   transition-duration: 0.4s;
   transition-property: all;
