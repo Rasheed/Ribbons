@@ -1,6 +1,6 @@
 
 /* Main Content */
-#main-wrapper { width: 85%; margin: 0 auto;}
+#main-wrapper, #edit-ribbon, #blog, #topribbon { width: 85%; margin: 0 auto;}
 
 .wrapper { height: 375px; text-align: center; font-weight: bold; padding: 150px 0 0 0;} /* Height of nav bar added to total height: 300 */
 
@@ -241,12 +241,13 @@ p{
 	margin-right:auto;
 }
 /*end of img*/
-#profilepic {
-	display: block; margin: 20px auto; background: #fff; border-radius: 10px; padding: 15px
-}
 #ribbonpic {
-	display: block; margin: 20px auto; background: #fff; border-radius: 10px; padding: 15px
+	float:left; display: block; margin-right: 400px; background: #fff; border-radius: 10px; padding: 15px
 }
+#profilepic {
+	float:left; display: block; margin-left: 200px; background: #fff; border-radius: 10px; padding: 15px
+}
+
 
 .progress { position:relative; width:150px; border: 1px solid #ddd; padding: 1px; border-radius: 3px; }
 .bar { background-color: #9ed29e; width:0%; height:15px; border-radius: 3px; }
@@ -295,6 +296,7 @@ p{
 	margin-top: 5px;
 }
 
+<<<<<<< HEAD
 #albumbutton {
   display: block;
   font-size: 22px;
@@ -327,4 +329,50 @@ p{
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+=======
+form {
+ position: relative;
+ top: 20px;
+ border-radius: 4px;
+ width: 400px;
+ height: 180px;
+ margin: 0 auto;
+}
+
+form textarea {
+ border-radius: 2px;
+ box-shadow:  0px 2px 11px 0px rgba(0, 0, 0, 0.3);
+ border: 1px solid #e2e6e6;
+ margin: 10px 0 10px 0;
+ font-family: 'Open Sans', sans-serif;
+ outline: none;
+ width: 395px;
+ height: 100px;
+}
+
+form span.counter {
+ float: right;
+ color: #333;
+}
+
+form p.info {
+ font-size: 11px;
+ color: #999;
+}
+form p.info > span {
+ color: #333; 
+}
+
+form input[type=submit] {
+ cursor: pointer;
+ box-shadow:  0px 2px 11px 0px rgba(0, 0, 0, 0.3);
+ border: 1px solid #A8F1FF;
+ border-radius: 2px;
+ background-color:#FF4400;
+ color: #fff;
+ float: right;
+ padding: 10px;
+}
+
+>>>>>>> FETCH_HEAD
 

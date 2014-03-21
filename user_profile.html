@@ -4,6 +4,7 @@
     <script type="text/javascript" src="js/jquery.2.0.2.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
     <script type="text/javascript" src="js/user_profile.js"></script> 
+	<script type="text/javascript" src="js/blogpost.js"></script> 
 	<link href="css/userhome.css" rel="stylesheet" type="text/css">
 	<link href="css/navigation.css" rel="stylesheet" type="text/css">
 	<link href="css/pagespacer.css" rel="stylesheet" type="text/css">
@@ -25,55 +26,42 @@
         <li>
           <div align="left"><a href="messages.html"><img src="img/side-navigation-menu_messages.svg" alt="Messages">Messages</a></div>
         </li>
-              </ul>
+      </ul>
     </nav>
-    <div class="inner-w">
-  	  <span id="ribbonimage">
-        <img src="" id="rimage">
-      </span>
-      <div>
-      <div id="ribbonpic">
-        <form action="helpers/uploadRibbon.php" method="post" enctype="multipart/form-data">
-          <input type="hidden" name="Id" id="ruserid">
-          <input type="file" name="uploadedfile"><br>
-          <input type="submit" value="Upload Image">
-        </form>
-        <div class="progress">
-          <div class="bar" id="ribbonbar"></div >
-          <div class="percent" id="ribbonpercent">0%</div >
-        </div>
-        <div id="status2"></div>
-      </div>
-      </div>
-    	<br>
-    	<div class="column column-a">	
-    	  <span class="user">
-          <span id="profileimage">
-            <img src="" id="pimage">
-          </span>
-        </span>
-        <div class="user">
-          <div class="usr-info">
-            <div id="profilepic">
-              <form action="helpers/upload.php" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="Id" id="userId">
-                <input type="file" name="uploadedfile" value="Change Picture"><br>
-                <input type="submit" value="Upload Image">
-              </form>
-              <div class="progress">
-                <div class="bar" id="profilebar"></div >
-                <div class="percent" id="profilepercent">0%</div >
+	
+	<div class = "main-wrapper">
+		<div id = "topribbon" class="page">
+			<p class="first">My Profile</p>
+			<div class="ribbon" id="ribbon">
+            <div class="ribbon-hover-text">
+              <h3 id = "username"></h3>
+              <h4 id = "email"></h4>
+              <div id="button row">
+                <div class = "button" data-label="Add Friend"></div>
               </div>
-              <div id="status1"></div>
+              <p></p>
+            </div>
+            <div class="profile-image ribbon-text" id = "ribbonprofilepic">
             </div>
           </div>
-        </div>
-     	</div>
-      <div class="column column-b page">
-	      <div id='name'> First and Last Name </div><br>
-	      <div id='email'> Email </div><br>
-	      <div id='bday'> Birthday </div><br>
-	      <div id='gender'> Gender </div><br>
+		</div>
+		<hr class="fancy-line">
+		<div id= "blog" class="page">
+		<p class="first">My blog</p>
+			<div id="main-body">
+			<form id="blogpost" action="">
+			  <textarea id = "post" maxlength="140" name="message" id="message" placeholder="Add your comment!"></textarea>
+			  <input id = "add_post" type="submit" value="Add Comment">
+			</form>
+			  <div class="reports">
+				</ul>
+			  </div>
+			</div>
+		</div>
+		<hr class="fancy-line">
+		<div id="edit-ribbon" class="page">
+		<p class="first">Edit my profile</p>
+		<div id="form" class="column column-b page">
         Location: <button type="button" id="location">Add Location</button><br>
         <div id="locationform">
           <form>
@@ -118,6 +106,7 @@
         <ul id="worklist"></ul>
 
         <textarea id="aboutme" rows="4" cols="50">Enter a description of yourself that you want to appear on your profile here...</textarea><br><br>
+<<<<<<< HEAD
 
         <a href="albums.html" id="albumbutton">View Albums</a><br> 
 
@@ -132,7 +121,26 @@
           </div>
         </div>
 
+=======
+>>>>>>> FETCH_HEAD
       </div>
+		<div id="pictureforms">
+			<div id="profilepic">
+				  <form action="helpers/upload.php" method="post" enctype="multipart/form-data">
+					<input type="hidden" name="Id" id="userId">
+					<input type="file" name="uploadedfile" value="Change Picture"></br>
+					<input type="submit" value="Upload Image">
+				  </form>
+				  <div id="ribbonpic">
+				<form action="helpers/uploadRibbon.php" method="post" enctype="multipart/form-data">
+				  <input type="hidden" name="Id" id="ruserid">
+				  <input type="file" name="uploadedfile"></br>
+				  <input type="submit" value="Upload Image">
+				</form>
+			</div>
+			</div>			
+		</div>
+		</div>
     </div>
   </body>
 </html> 

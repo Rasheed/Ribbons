@@ -19,11 +19,13 @@ $(function() {
 	console.log(userId);
 
 	$.ajax({
+		  async: true,  
 		  url: 'api/profile/get_userinfo.php',
 		  type: 'GET',
 		  data: {'id': userId},
 		  dataType: 'json',
-			success: function(data) {
+			success: function(d) {
+				var data = JSON.parse(d);
 				console.log(data);
 				fname = data.FirstName;
 				lname = data.LastName; 
@@ -31,18 +33,20 @@ $(function() {
 				bday = data.Birthday;
 				gender = data.Gender;
 				aboutme = data.AboutMe;
-				$('#name').html(fname+' '+lname);
+				$('#username').html(fname+' '+lname);
 				$('#email').html(email);
 				$('#bday').html(bday);
 				$('#gender').html(gender);
 				$('#aboutme').html(aboutme);
 				if(data.hasProfilePic) {
-					$('#pimage').attr("src",data.picturePath);
+					$('#ribbon').attr("style", "background-image:url('"+data.picturePath+"'); background-size: cover;");
+
 				} else {
 					$('#profileimage').text('No Profile Picture Available.');
 				}
 				if(data.hasRibbonPic) {
-					$('#rimage').attr("src",data.rpicturePath);
+					//$('#rimage').attr("src",data.rpicturePath);
+					$('#ribbon').attr("style", "background-image:url('"+data.rpicturePath+"'); background-size: cover;");
 				} else {
 					$('#ribbonimage').text('No Ribbon Picture Available.');
 				}
@@ -61,7 +65,9 @@ $(function() {
 			},
 			error: function(xhr, desc, err) {
 			  console.log(xhr);
-			  console.log('Details: ' + desc + '\nError:' + err);
+			  			  console.log(desc);
+			  console.log(xhr);
+			  //console.log('Details: ' + desc + '\nError:' + err);
 			}
 	});
 
@@ -217,6 +223,8 @@ $(function() {
     		if(xhr.responseText[0]=='.') {
         		status1.html("The file has been uploaded successfully.");
         		$('#pimage').attr("src",xhr.responseText);
+				$('#ribbonprofilepic').attr("style", "background-image:url('"+xhr.responseText+"'); background-size: cover;");;
+
         	} else {
         		status1.html(xhr.responseText);
         	}
@@ -241,6 +249,7 @@ $(function() {
     		if(xhr.responseText[0]=='.') {
         		status2.html("The file has been uploaded successfully.");
         		$('#rimage').attr("src",xhr.responseText);
+				$('#ribbon').attr("style", "background-image:url('"+xhr.responseText+"'); background-size: cover;");
         	} else {
         		status2.html(xhr.responseText);
         	}
