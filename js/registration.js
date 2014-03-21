@@ -69,13 +69,15 @@ $(function() {
       			data: {'first_name': fname, 'last_name': lname, 'email': email,
       		 		'password': password, 'birthday': bday, 'gender': gender},
         		success: function(data) {
+        			console.log(data);
+        			var user = JSON.parse(data);
           			if(eval(data.userGenerated)) {
             			console.log('Moving to homepage');
 			      		console.log(data.userId);
             			sessionStorage.setItem('userId',data.userId);
             			window.location.href='user_profile.html';
           			}
-          			if(!eval(data.userGenerated)) {
+          			else if(!eval(data.userGenerated)) {
             			alert('The entered email is already registered.');
           			}
         		},
