@@ -84,7 +84,11 @@ var searchIndex = [];
 				type: 'GET',
 				data: {'searchField': e.target.textContent},
 				success: function(data) {
-					console.log(data);
+					var info = JSON.parse(data)
+					console.log(info[0])
+					sessionStorage.setItem('viewId', info[0].Id);
+					console.log(sessionStorage.getItem('viewId'));
+					window.location.href = "/viewprofile.html";					
 				},
 				error: function(xhr, desc, err) {
 					console.log(xhr);

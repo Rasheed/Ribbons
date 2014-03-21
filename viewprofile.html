@@ -3,8 +3,9 @@
   <head>
     <script type="text/javascript" src="js/jquery.2.0.2.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
-    <script type="text/javascript" src="js/friend_profile.js"></script> 
-	<link href="css/profile.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/friend_profile.js"></script>
+	<link href="css/userhome.css" rel="stylesheet" type="text/css">	
+	<link href="css/profile.css" rel="stylesheet" type="text/css">	
 	<link href="css/navigation.css" rel="stylesheet" type="text/css">
 	<link href="css/pagespacer.css" rel="stylesheet" type="text/css">
   </head>
@@ -28,23 +29,23 @@
     </nav>
 	<div class = "main-wrapper">
 		<div class="page">
-			<p class="first">Friends</p>
-			<div class="ribbon" style="background-image:url('http://limosinessex.com/wp-content/uploads/2012/06/rolls-royce-phantom-1541.jpg'); background-size: cover;">
+			<p class="first"></p>
+			<div class="ribbon" id="ribbon">
             <div class="ribbon-hover-text">
-              <h3>Ribbons user</h3>
-              <h4>Engineer</h4>
+              <h3 id = "username"></h3>
+              <h4 id = "email"></h4>
               <div id="button row">
-                <div class = "button" data-label="Add Friend"></div>
+                <div id="addfriend" class = "button" data-label="Add Friend"></div>
               </div>
-              <p>Nulla rhoncus orci sed odio euismod vestibulum. Praesent porta aliquet nulla, ut mattis velit rhoncus eu duspendisse nibh orci laoreet. </p>
+              <p id = "information"></p>
             </div>
-            <div class="profile-image ribbon-text" style="background-image:url('http://blog.zap2it.com/pop2it/jennifer-lawrence-miss-dior-thumbnail.jpg'); background-size: auto;">
+            <div class="profile-image ribbon-text" id = "ribbonprofilepic">
             </div>
           </div>
 		</div>
 		<hr class="fancy-line">
 		<div class="page">
-			<p class="first">Friends blog</p>
+			<p class="first"></p>
 			<div id="main-body">
 			<div class="reports">
             </ul>

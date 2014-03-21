@@ -24,9 +24,7 @@ $(function() {
 		  type: 'GET',
 		  data: {'id': userId},
 		  dataType: 'json',
-			success: function(d) {
-				var data = JSON.parse(d);
-				console.log(data);
+			success: function(data) {
 				fname = data.FirstName;
 				lname = data.LastName; 
 				email = data.Email;
@@ -35,7 +33,7 @@ $(function() {
 				aboutme = data.AboutMe;
 				$('#username').html(fname+' '+lname);
 				$('#email').html(email);
-				$('#bday').html(bday);
+				$('#information').html(bday+"</br>"+gender+"</br>"+aboutme);
 				$('#gender').html(gender);
 				$('#aboutme').html(aboutme);
 				if(data.hasProfilePic) {
