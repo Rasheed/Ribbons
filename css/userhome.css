@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Russo+One);
+@import url(http://fonts.googleapis.com/css?family=Muli);
 
 /* Main Content */
 #main-wrapper, #edit-ribbon, #blog, #topribbon { width: 85%; margin: 0 auto;}
@@ -5,7 +7,7 @@
 .wrapper { height: 375px; text-align: center; font-weight: bold; padding: 150px 0 0 0;} /* Height of nav bar added to total height: 300 */
 
 h2, h3, h4, h5, h6,p {
-  font-family: helvetica;
+  font-family: 'Muli';
 }
 
 h1, h2, h3 {
@@ -296,6 +298,39 @@ p{
 	margin-top: 5px;
 }
 
+#albumbutton {
+  display: block;
+  font-size: 22px;
+  text-align: center;
+  line-height: 44px;
+  text-decoration: none;
+  color: white;
+  background-color: #cc4331;
+  border-radius: 4px;
+  width: 200px;
+  text-shadow: 0 -1px -1px #af3a2a;
+  -moz-box-shadow: 0 4px 0 #af3a2a, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 4px 0 #af3a2a, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 0 #af3a2a, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+  -moz-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+#albumbutton:hover {
+  background-color: #d25544;
+  text-shadow: 0 -1px -1px #c4402f;
+  -moz-box-shadow: 0 4px 0 #c4402f, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 4px 0 #c4402f, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 0 #c4402f, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+}
+#albumbutton:active {
+  margin-top: -18px;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 form {
  position: relative;
  top: 20px;
@@ -339,5 +374,4 @@ form input[type=submit] {
  float: right;
  padding: 10px;
 }
-
 

@@ -3,11 +3,9 @@
   <head>
     <script type="text/javascript" src="js/jquery.2.0.2.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
-    <script type="text/javascript" src="js/friend_report.js"></script> 
-	  <link href="css/report.css" rel="stylesheet" type="text/css">
-	  <link href="css/navigation.css" rel="stylesheet" type="text/css">
-	  <link href="css/pagespacer.css" rel="stylesheet" type="text/css">
-
+	<link href="css/navigation.css" rel="stylesheet" type="text/css">
+	
+    <link href="css/settings.css" rel="stylesheet" type="text/css">
   </head>
 
   <body>
@@ -30,10 +28,33 @@
         </li>
               </ul>
     </nav>
-    <div id="main-body">
-      <div class="reports page">
-		<p class="first">Friend Report</p>
+	
+	<div class = "main-wrapper">
+            <div id = "topribbon" class="page">
+                <h2 class="first">Settings</h2>
+                    <div class="wrapper">
+  <section>
+    
+    <h1>Privacy Settings</h1>
+    
+    <!--oldschool ios switch-->
+    <div class="wrapper">
+      <div class="old-ios-switch switch">
+        <input type="checkbox" id="old-switch">
+        <span>
+          <label for="old-switch"></label>
+        </span>
       </div>
+      <p>Profile Display: Only Friends</p>
     </div>
+    
+ 
+  
+  </section>
+</div>
+                    </div>
+             </div>    
+      </div>
+     	
   </body>
 </html> 
