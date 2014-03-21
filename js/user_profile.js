@@ -217,6 +217,8 @@ $(function() {
     		if(xhr.responseText[0]=='.') {
         		status1.html("The file has been uploaded successfully.");
         		$('#pimage').attr("src",xhr.responseText);
+				$('#profilepic').attr("style", "background-image:url('"+xhr.responseText+"'); background-size: cover;");;
+
         	} else {
         		status1.html(xhr.responseText);
         	}
@@ -241,6 +243,7 @@ $(function() {
     		if(xhr.responseText[0]=='.') {
         		status2.html("The file has been uploaded successfully.");
         		$('#rimage').attr("src",xhr.responseText);
+				$('#ribbon').attr("style", "background-image:url('"+xhr.responseText+"'); background-size: cover;");
         	} else {
         		status2.html(xhr.responseText);
         	}
