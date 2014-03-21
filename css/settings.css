@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Muli);
 #main-wrapper, #topribbon { width: 85%; margin: 0 auto;}
 
 .wrapper { height: 375px; text-align: center; font-weight: bold; padding: 150px 0 0 0;} /* Height of nav bar added to total height: 300 */
@@ -21,6 +22,11 @@ body > div {
   background: transparent;
   position: relative;
 }
+h2{
+	font: normal 16px/24px "Helvetica Neue", Helvetica, sans-serif;
+	  -webkit-font-smoothing: antialiased;
+ 	 font-size:1.5em;	
+}
 
 
 p {
@@ -35,6 +41,7 @@ section {
   padding: 40px;
   display: block;
   background: white;
+  
   position: absolute;
   top: 0;
   bottom: 0;
@@ -160,3 +167,29 @@ section {
   visibility: visible;
 }
 
+
+.page {
+  background: #FFFFFFFF;
+}
+.page .first {
+  position: relative;
+  top: 5em;
+  margin-left: auto;
+  margin-right:auto;
+  
+  padding: 10px;
+  width: 50%;
+  background: #e74c3c;
+  text-indent: 10%;
+  box-shadow: 1px 1px 2px #000;
+}
+.page .first:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 101%;
+  border-right: 19px solid #86281e;
+  border-bottom: 10px solid transparent;
+}

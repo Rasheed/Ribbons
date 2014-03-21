@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Russo+One);
+@import url(http://fonts.googleapis.com/css?family=Muli);
 
 /* Main Content */
 #main-wrapper, #edit-ribbon, #blog, #topribbon { width: 85%; margin: 0 auto;}
@@ -5,7 +7,7 @@
 .wrapper { height: 375px; text-align: center; font-weight: bold; padding: 150px 0 0 0;} /* Height of nav bar added to total height: 300 */
 
 h2, h3, h4, h5, h6,p {
-  font-family: helvetica;
+  font-family: 'Muli';
 }
 
 h1, h2, h3 {
