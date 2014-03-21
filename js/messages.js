@@ -65,7 +65,23 @@ $(function() {
       }
       $('.larg').prepend('<div><form><input type="text" id="content"><button data-to="'+user+'" data-type="'+type+'" id="send_message">Send Message</button></form></div>');
     } else {
-      $('.larg').prepend('<div><form>Message a:<select><option>friend</option><option>circle</option><option>group of friends</option></select><input type="text" value="Id"><input type="text" value="Message"><button>Send Message</button></form></div>');
+      $('.larg').prepend('<div><form>Message a:<select id="mtype"><option>friend</option><option>circle</option><option>group of friends</option></select><input type="text" value="Id"><input type="text" id="mcontent" value="Message"><button id="new_message">Send Message</button></form></div>');
+    }
+  });
+
+  $(document).on('click', '#new_message', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    // From userId
+    // Content
+    var content = $('#mcontent').val();
+    // Type
+    if($('#mtype').val()=='friend') {
+      type='Personal';
+    } else if($('#mtype').val()=='circle') {
+      type='Circle';
+    } else {
+      type='Group';
     }
   });
 
