@@ -25,6 +25,7 @@ $(function() {
 		  data: {'id': userId},
 		  dataType: 'json',
 			success: function(data) {
+				console.log(data);
 				fname = data.FirstName;
 				lname = data.LastName; 
 				email = data.Email;
@@ -37,11 +38,10 @@ $(function() {
 				$('#gender').html(gender);
 				$('#aboutme').html(aboutme);
 				if(data.hasProfilePic) {
-					$('#ribbon').attr("style", "background-image:url('"+data.picturePath+"'); background-size: cover;");
-
+					$('#ribbonprofilepic').attr("style", "background-image:url('"+data.picturePath+"'); background-size: cover;");
 				} else {
 					$('#profileimage').text('No Profile Picture Available.');
-				}
+				} 
 				if(data.hasRibbonPic) {
 					//$('#rimage').attr("src",data.rpicturePath);
 					$('#ribbon').attr("style", "background-image:url('"+data.rpicturePath+"'); background-size: cover;");

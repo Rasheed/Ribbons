@@ -21,7 +21,7 @@ $(function() {
 				$('#email').html(email);
 				$('#information').html("</br>"+bday+"</br>"+gender+"</br>"+aboutme);
 				if(data.hasProfilePic) {
-					$('#ribbon').attr("style", "background-image:url('"+data.picturePath+"'); background-size: cover;");
+					$('#ribbonprofilepic').attr("style", "background-image:url('"+data.picturePath+"'); background-size: cover;");
 				} else {
 					$('#profileimage').text('No Profile Picture Available.');
 				}
@@ -88,7 +88,7 @@ $(function() {
 						data: {'id1': userId, 'id2': viewId},
 						success: setTimeout(function(data) {
 							console.log(data);
-							//location.reload();
+							location.reload();
 						}, 2000),
 						error: function(xhr, desc, err) {
 							console.log(xhr);

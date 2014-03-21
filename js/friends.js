@@ -9,7 +9,7 @@ $(document).ready(function() {
             'id': userId
         },
         success: function(data) {
-            //console.log(data);
+            console.log(data);
             var friends = JSON.parse(data);
             var friendnumber = $('<div/>', {
 				html: "_"
@@ -32,7 +32,7 @@ $(document).ready(function() {
                 var ribbon = $('<div/>', {
                     id: friends[i].UserId2.toString(),
                     class: 'ribbon',
-                    style: "background-image:url('http://backgrounddesignz.com/wp-content/uploads/2013/12/ws_Minimal_Gray_to_White_Gradient_1920x1200.jpg'); background-size: cover;"
+                    style: "background-image:url('"+friends[i].RibbonPicture+"'); background-size: cover;"
                 });
                 ribbonhovertext.append(name);
                 ribbonhovertext.append(email);
@@ -40,11 +40,13 @@ $(document).ready(function() {
                 ribbon.append(ribbonhovertext);
                 var profileimage = $('<div/>', {
                     class: 'profile-image ribbon-text',
-                    style: "background-image:url('http://blog.zap2it.com/pop2it/jennifer-lawrence-miss-dior-thumbnail.jpg'); background-size: cover; background-repeat:no-repeat;"
+                    style: "background-image:url('"+friends[i].ProfilePicture+"'); background-size: cover; background-repeat:no-repeat;"
                 });
                 ribbon.append(profileimage);
                 ribbon.click(function(e) {
-                    alert(e.target.getAttribute('id'));
+					sessionStorage.setItem('viewId', e.target.getAttribute('id'));
+					console.log(sessionStorage.getItem('viewId'));
+					window.location.href = "/viewprofile.html";	
                 });
                 $("#main-wrapper").append(ribbon);
             }
