@@ -71,13 +71,13 @@ $(function() {
         		success: function(data) {
         			console.log(data);
         			var user = JSON.parse(data);
-          			if(eval(data.userGenerated)) {
+          			if(eval(user.userGenerated)) {
             			console.log('Moving to homepage');
-			      		console.log(data.userId);
-            			sessionStorage.setItem('userId',data.userId);
+			      		console.log(user.userId);
+            			sessionStorage.setItem('userId',user.userId);
             			window.location.href='user_profile.html';
           			}
-          			else if(!eval(data.userGenerated)) {
+          			else if(!eval(user.userGenerated)) {
             			alert('The entered email is already registered.');
           			}
         		},
