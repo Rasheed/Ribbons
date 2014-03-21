@@ -296,7 +296,6 @@ p{
 	margin-top: 5px;
 }
 
-<<<<<<< HEAD
 #albumbutton {
   display: block;
   font-size: 22px;
@@ -329,7 +328,7 @@ p{
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-=======
+
 form {
  position: relative;
  top: 20px;
@@ -373,6 +372,4 @@ form input[type=submit] {
  float: right;
  padding: 10px;
 }
-
->>>>>>> FETCH_HEAD
 
