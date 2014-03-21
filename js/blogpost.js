@@ -23,4 +23,20 @@ $(document).ready(function () {
         submitButton.fadeOut(200);
       }
     });
-  });
+	
+	var showForm = false;
+	$("#form").hide();
+	$("#pictureforms").hide();
+	$("#edit-ribbon").click(function(){
+	if(showForm){
+		$("#form").hide();
+		$("#pictureforms").hide();
+		showForm = false;
+		} else {
+			$("#form").show();
+			$("#pictureforms").show();
+			showForm = true;
+		}
+	});
+
+});
