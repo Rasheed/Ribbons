@@ -51,8 +51,8 @@
 		<p class="first">My blog</p>
 			<div id="main-body">
 			<form id="blogpost" action="">
-			  <textarea id = "post" maxlength="140" name="message" id="message" placeholder="Add your comment!"></textarea>
-			  <input id = "add_post" type="submit" value="Add Comment">
+			  <textarea id = "post" maxlength="140" name="message" id="message" placeholder="Add your post"></textarea>
+			  <input id = "add_post" type="submit" value="Add Post">
 			</form>
 			  <div class="reports">
 				</ul>
@@ -114,12 +114,14 @@
       </div>
 		<div id="pictureforms">
 			<div id="profilepic">
+          Change Profile Picture:
 				  <form action="helpers/upload.php" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="Id" id="userId">
 					<input type="file" name="uploadedfile" value="Change Picture"></br>
 					<input type="submit" value="Upload Image">
 				  </form>
 				  <div id="ribbonpic">
+            Change Ribbon Picture:
 				<form action="helpers/uploadRibbon.php" method="post" enctype="multipart/form-data">
 				  <input type="hidden" name="Id" id="ruserid">
 				  <input type="file" name="uploadedfile"></br>

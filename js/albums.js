@@ -108,14 +108,14 @@ $(document).ready(function() {
                                 ribbon.append(profileimage);
                                 $("#circlemembers").append(ribbon);
                             }
-                            var bodytext = $('<p>', {
-                                    html: 'Add Photo'
-                                });
+                    
+                                    //html: 'Add Photo' + circleid
+                        
                             var ribbonhovertext = $('<div/>', {
                                    class: 'ribbon-hover-text',
                                     style: "background-color:rgba(217,255,0,0.60)",
                             });
-                            ribbonhovertext.append(bodytext);
+                            ribbonhovertext.append('<form id="picform" action="helpers/uploadpic.php" method="post" enctype="multipart/form-data"><input type="hidden" name="AlbumId" value="'+circleid+'"><input type="text" name="picName" value="Picture Name"></br><input type="file" name="uploadedfile"></br><input type="submit" value="Upload Image"></form>');
                             var ribbon = $('<div/>', {
                                     class: 'ribbon'
                             });
@@ -185,4 +185,12 @@ $(document).ready(function() {
 						}
 					});
 	});
+
+    $(document).ready(function() { 
+        $('#picform').ajaxForm({
+            complete: function(xhr) {
+                alert(xhr);
+            } 
+        });
+    });
 });

@@ -1,11 +1,11 @@
 $(document).ready(function () {
-    var comment = $('form#blogpost textarea'),
+    var comment = $('#blogpost textarea'),
         counter = '',
         counterValue = 140, //change this to set the max character count
         minCommentLength = 10, //set minimum comment length
         $commentValue = comment.val(),
         $commentLength = $commentValue.length,
-        submitButton = $('form#blogpost input[type=submit]').hide();
+        submitButton = $('#blogpost input[type=submit]').hide();
   
     $('form').prepend('<span class="counter"></span>').append('<p class="info">Min length: <span></span></p>');
     counter = $('span.counter');
