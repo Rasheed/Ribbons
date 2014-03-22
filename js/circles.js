@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var userId = 11; //sessionStorage.getItem('userId');
+		var userId = sessionStorage.getItem('userId');
 	
 	    $.ajax({
         async: false,
