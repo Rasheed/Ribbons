@@ -51,7 +51,7 @@ $(function() {
 			return false;
 		}
 		gender = $('#gender').val();
-		if(!((gender == "Male") || (gender == "FEMALE"))) {
+		if(!((gender == "Male") || (gender == "Female"))) {
 			alert('You must pick a gender.');
 			return false;
 		}
