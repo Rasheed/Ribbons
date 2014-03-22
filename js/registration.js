@@ -73,8 +73,8 @@ $(function() {
         			var user = JSON.parse(data);
           			if(eval(user.userGenerated)) {
             			console.log('Moving to homepage');
-			      		console.log(user.userId);
-            			sessionStorage.setItem('userId',user.userId);
+			      		console.log(user.Id);
+            			sessionStorage.setItem('userId',user.Id);
             			window.location.href='user_profile.html';
           			}
           			else if(!eval(user.userGenerated)) {

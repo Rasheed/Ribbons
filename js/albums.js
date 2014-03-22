@@ -1,31 +1,11 @@
 $(document).ready(function() {
 	var user = sessionStorage.getItem('userId');
-    var view = sessionStorage.getItem('viewId');
-    var checkAccess = '';
-    if( view == null) {
-        checkAccess = 'You';
-        view=user;
-    } else {
-        $('#edit-circle-wrapper').empty();
-        // Check if friend or not
-        /*$.ajax({
-            async: false,
-            url: 'api/albums/check_friend.php',
-            type: 'GET',
-            data: {
-                'userId': user,
-                'viewId': view
-            },
-            success: function(data) {
-                alert(data);
-            },
-            error: function(xhr, desc, err) {
-                console.log(xhr);
-                console.log('Details: ' + desc + '\nError:' + err);
-            }
-        });*/
+	var view = sessionStorage.getItem('viewId');
+
+    if(view!='') {
+        $('#edit-circle-wrapper').hide();
     }
-	
+
 	    $.ajax({
         async: false,
         url: 'api/albums/get_albums.php',
@@ -89,7 +69,7 @@ $(document).ready(function() {
                                 addButton.click(loading);
                                 var ribbonhovertext = $('<div/>', {
                                    class: 'ribbon-hover-text',
-                                    style: "background-color:rgba(217,255,0,0.60)",
+                                    style: "background-color:#4daf7c",
                                     id: photos[i].Id.toString()
                                 });
                                 var ribbon = $('<div/>', {
@@ -110,15 +90,18 @@ $(document).ready(function() {
                             }
                     
                                     //html: 'Add Photo' + circleid
-                        
+                        if(view=='') {
                             var ribbonhovertext = $('<div/>', {
                                    class: 'ribbon-hover-text',
-                                    style: "background-color:rgba(217,255,0,0.60)",
+                                    style: "background-color:#4daf7c",
                             });
-                            ribbonhovertext.append('<form id="picform" action="helpers/uploadpic.php" method="post" enctype="multipart/form-data"><input type="hidden" name="AlbumId" value="'+circleid+'"><input type="text" name="picName" value="Picture Name"></br><input type="file" name="uploadedfile"></br><input type="submit" value="Upload Image"></form>');
-                            var ribbon = $('<div/>', {
+                            
+                                ribbonhovertext.append('<form id="picform" action="helpers/echo.php" method="post" enctype="multipart/form-data"><input type="hidden" name="AlbumId" value="'+circleid+'"><input type="text" name="picName" value="Picture Name"></br><input type="file" name="uploadedfile"></br><input type="submit" value="Upload Image"></form>');
+
+                                var ribbon = $('<div/>', {
                                     class: 'ribbon'
-                            });
+                                });
+                            
                             ribbon.append(ribbonhovertext);
                             var profileimage = $('<div/>', {
                                     class: 'profile-image ribbon-text',
@@ -126,6 +109,7 @@ $(document).ready(function() {
                                 });
                             ribbon.append(profileimage);
                             $("#circlemembers").append(ribbon);
+                        }
                         },
                         error: function(xhr, desc, err) {
                             console.log(xhr);
@@ -185,12 +169,4 @@ $(document).ready(function() {
 						}
 					});
 	});
-
-    $(document).ready(function() { 
-        $('#picform').ajaxForm({
-            complete: function(xhr) {
-                alert(xhr);
-            } 
-        });
-    });
 });

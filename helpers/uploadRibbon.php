@@ -15,7 +15,7 @@
 	$result = $album_stmt->fetchAll(PDO::FETCH_ASSOC); 
 	if(count($result)==0){ 
 		mkdir("../uploads/".$id."/ribbon", 0777, true);
-		$sql_insert = "INSERT INTO albums (UserId,Name,LocationId,CreationDate) VALUES (?,'Ribbon',NULL,?);";
+		$sql_insert = "INSERT INTO albums (UserId,Name,LocationId,CreationDate,AccessRights) VALUES (?,'Ribbon',NULL,?,'Public');";
 		$stmt = $conn->prepare($sql_insert);
 		$stmt->execute(array($id, $dates));			 
 		$albumId = $conn->lastInsertId();

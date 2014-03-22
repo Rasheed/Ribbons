@@ -274,4 +274,10 @@ $(function() {
 			}
 	});
 	});
+
+	$('#albumbutton').click(function(e){
+		sessionStorage.setItem('userId', userId);; 
+		sessionStorage.setItem('viewId', '');
+		window.location = 'albums.html';
+	});
 });   
