@@ -100,7 +100,7 @@ $(function() {
 		e.stopPropagation();
 		var locid = $('#locid').val();
 		var loctype = $('#loctype').val();
-		var loc = locid.concat(', ', loctype);
+		var loc = loctype.concat(": ", locid);
 		locationls.push(loc);
 		$('#locationform').hide();
 		$('#locationlist').empty();
@@ -126,7 +126,7 @@ $(function() {
 		var estart = $('#estart').val();
 		var eend = $('#eend').val();
 		var ecourse = $('#ecourse').val();
-		var edu = eduid.concat(', ', estart,', ', eend, ', ', ecourse);
+		var edu = "Studied ".concat(ecourse, " at ", eduid , ' , from ', estart,' , until ', eend);
 		educationls.push(edu);
 		$('#educationform').hide();
 		$('#educationlist').empty();
@@ -151,7 +151,7 @@ $(function() {
 		var wstart = $('#wstart').val();
 		var wend = $('#wend').val();
 		var wposition = $('#wposition').val();
-		var wor = workid.concat(', ', wstart,', ', wend, ', ', wposition);
+		var wor = "Worked as ".concat(wposition, ' at ', workid,' , from ', wstart, ' , until ', wend);
 		workls.push(wor);
 		$('#workform').hide();
 		$('#worklist').empty();
