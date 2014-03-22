@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var userId = 11; //sessionStorage.getItem('userId');
+    var userId = sessionStorage.getItem('userId');
     //console.log(userId);
     $.ajax({
         async: false,
@@ -12,11 +12,11 @@ $(document).ready(function() {
             console.log(data);
             var friends = JSON.parse(data);
             var friendnumber = $('<div/>', {
-				html: "_"
+				html: ""
             });
             $("#main-wrapper").append(friendnumber);
             for (var i = 0; i < friends.length; i++) {
-                //console.log(friends[i]);
+                console.log(friends[i]);
                 var bodytext = $('<p>', {
                     html: 'You are friends' //friends[i].toString()
                 });
