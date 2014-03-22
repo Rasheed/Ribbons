@@ -30,4 +30,23 @@ $(document).ready(function () {
 			//console.log('Details: ' + desc + '\nError:' + err);
 		}
 	});
+
+	$.ajax({
+		url: 'api/settings/get_settings.php',
+		type: 'GET',
+		data: {'id': userId},
+		success: function(data) {
+			data = JSON.parse(data);
+			if(data[0].Admin) {
+				$('#admin').html('You are an admin user!');
+			} else {
+				$('#admin').html('You are not an admin user :(');
+			}
+			console.log(data);
+		},
+		error: function(xhr, desc, err) {
+			console.log(xhr);
+			console.log('Details: ' + desc + '\nError:' + err);
+		}
+	});
 });
