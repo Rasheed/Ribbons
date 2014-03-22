@@ -6,9 +6,9 @@ body {
 }
   
 h1{
-  color: #FFF;           
+  color: #fff ;           
   font-family: 'Russo One', sans-serif;
-  font-size: 7em;
+  font-size: 9em;
   text-align:center;
   line-height: 1.4;
   margin: 0;
@@ -85,7 +85,7 @@ h1{
 }
 
 .register {
-  background-color: #FFA500;
+  background-color: #e74c3c;
   display: table;
 }
 
