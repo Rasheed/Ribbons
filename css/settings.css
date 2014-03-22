@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Muli);
 #main-wrapper, #topribbon { width: 85%; margin: 0 auto;}
 
-.wrapper { height: 375px; text-align: center; font-weight: bold; padding: 150px 0 0 0;} /* Height of nav bar added to total height: 300 */
+.wrapper { height: 375px; text-align: center; font-weight: bold; padding: 100px 0 0 0;} /* Height of nav bar added to total height: 300 */
 
 html, body {
   margin: 0;
