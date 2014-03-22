@@ -1,5 +1,5 @@
 $(function() {
-	var userId = sessionStorage.getItem('userId');; 
+	var userId = sessionStorage.getItem('userId');
 	var viewId = sessionStorage.getItem('viewId');
 	
 	console.log(viewId);

@@ -193,3 +193,27 @@ section {
   border-right: 19px solid #86281e;
   border-bottom: 10px solid transparent;
 }
+
+.download { 
+	width: 370px; 
+	margin-left:auto;
+	margin-right:auto;
+	  font: 12px/26px Trebutchet, sans-serif;
+
+	background: #eee;
+    border-top: 1px solid #eee;
+	color: #f44;
+	border-radius: 3px;
+	box-shadow: 0 6px 4px rgba(0, 0, 0, 0.7);
+	cursor: pointer;
+}
+
+.download:hover {
+	margin-left:auto;
+	margin-right:auto;
+	width: 370px; 
+	background: #e1e1e1;
+    border-top: 1px solid #d0d0d0;
+	border-radius: 3px;
+	box-shadow: 0 6px 4px rgba(0, 0, 0, 0.7);
+}
