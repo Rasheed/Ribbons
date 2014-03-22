@@ -1,7 +1,9 @@
 <html>
   <head>
     <script type="text/javascript" src="js/jquery.2.0.2.js"></script>
+	<script type="text/javascript" src="js/messagesearch.js"></script> 
     <script type="text/javascript" src="js/messages.js"></script> 
+
     <link href="css/messages.css" rel="stylesheet" type="text/css">
     
   </head>
@@ -23,6 +25,15 @@
       </div>
       <article class='larg'>
       </article>
+	  <div id='newm'>
+			<form>Message a:
+			<select id="mtype"><option>friend</option><option>circle</option><option>group of friends</option></select>
+			<input autofocus class="search-field" id="searchBox" placeholder="search for friends" type="text">
+			<ul class="term-list hidden" id="searchResults"></ul>
+			<input type="text" id="mcontent" value="Message">
+			<button id="new_message">Send Message</button>
+			</form>
+		</div>
     </main>
   </body>
 </html>

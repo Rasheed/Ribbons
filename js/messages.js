@@ -1,5 +1,7 @@
 $(function() {
 
+	$('#newm').hide();
+	
   var userId=sessionStorage.getItem('userId');
   // Get all friends that sent messages or you sent messages to
   $.ajax({
@@ -33,7 +35,7 @@ $(function() {
           data: {'id': userId, 'user':user},
           dataType: 'json',
           success: function(data) {
-            for(var i=0; i<data.length; i++){
+            for(var i=0; i<data.length; i++){   
               if(data[i]['to']) {
                 $('.larg').prepend('<div><h3>'+title+': '+data[i]['Content']+'</h3></div>');
               } else {
@@ -65,7 +67,7 @@ $(function() {
       }
       $('.larg').prepend('<div><form><input type="text" id="content"><button data-to="'+user+'" data-type="'+type+'" id="send_message">Send Message</button></form></div>');
     } else {
-      $('.larg').prepend('<div><form>Message a:<select id="mtype"><option>friend</option><option>circle</option><option>group of friends</option></select><input type="text" value="Id"><input type="text" id="mcontent" value="Message"><button id="new_message">Send Message</button></form></div>');
+      $('#newm').show();
     }
   });
 
@@ -103,6 +105,32 @@ $(function() {
       error: function(xhr, desc, err) {
         console.log(xhr);
         console.log('Details: ' + desc + '\nError:' + err);
+      }
+    });
+  });
+  
+  $(document).on('click', '#new_message', function(e) {
+	console.log(e);
+    e.preventDefault();
+    e.stopPropagation();
+    var type = "Personal";
+    var to=sessionStorage.getItem('recipientId');
+    var content = $('#mcontent').val();
+	console.log("Sending: "+to+" "+userId+" "+content+" "+type);
+
+    $.ajax({
+      url: 'api/messages/add_message.php',
+      type: 'GET',
+      data: {'to':to, 'from':userId, 'content':content, 'type':type},
+      dataType: 'json',
+      success: function(data) {
+        if(data['message_sent'])
+          console.log("DONE: "+to+" "+userId+" "+content+" "+type);
+		  $('#newm').hide();
+      },
+      error: function(xhr, desc, err) {
+        console.log(xhr);
+        //console.log('Details: ' + desc + '\nError:' + err);
       }
     });
   });
