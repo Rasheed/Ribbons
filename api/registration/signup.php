@@ -19,7 +19,7 @@
 			echo json_encode($data);
  			return;
  		  } else { 
- 			$sql_insert = "INSERT INTO users (Email,Password,FirstName,LastName,Gender,Birthday) VALUES (?,?,?,?,?,?);";
+ 			$sql_insert = "INSERT INTO users (Email,Password,FirstName,LastName,Gender,Birthday,Admin) VALUES (?,?,?,?,?,?,0);";
  			$stmt = $conn->prepare($sql_insert);
  			$stmt->execute(array($email, $password, $first_name, $last_name, $gender, $birthday));			
  			$data = array("userGenerated" => "true");  

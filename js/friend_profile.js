@@ -152,5 +152,11 @@ $(function() {
             console.log('Details: ' + desc + '\nError:' + err);
         }
     });
+
+	$('#albumbutton').click(function(e){
+		sessionStorage.setItem('userId', userId);; 
+		sessionStorage.setItem('viewId', viewId);
+		window.location = 'albums.html';
+	});
 	
 });   

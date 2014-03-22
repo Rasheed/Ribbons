@@ -267,7 +267,7 @@ div.createbutton {
   cursor:pointer;
   font-size:1rem;
   font-weight:bold;
-  color:rgba(0,0,0,0.5);
+  color:#006600;
   background:transparent;
   width: 80px;
   height: 20px;
@@ -322,7 +322,7 @@ div.createbutton {
 
 .button:after {
   z-index:1;
-  background-color:rgba(100,0,0,0.5);
+  background-color:#006600;
   background-repeat:no-repeat;
   background-position:center center;
   -moz-transform:rotateX(180deg);
@@ -335,7 +335,7 @@ div.createbutton {
 }
 
 .button:active:before {
-  background-color:rgba(0,0,0,0.1);
+  background-color:#006600;
   width: 80px;
   height: 20px;
   display: inline-block;

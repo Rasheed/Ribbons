@@ -63,7 +63,7 @@ $(document).ready(function() {
                                 addButton.click(loading);
                                 var ribbonhovertext = $('<div/>', {
                                     class: 'ribbon-hover-text',
-                                    style: "background-color:rgba(217,255,0,0.60)",
+                                    style: "background-color:09C",
                                     id: friends[i].Id.toString()
                                 });
                                 var ribbon = $('<div/>', {
