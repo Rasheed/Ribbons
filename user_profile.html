@@ -11,25 +11,34 @@
   </head>
 
   <body>
-    <nav>
-      <ul>
-        <li>
-          <div align="left"><a href="home.html"><img src="img/side-navigation-menu_home.svg" alt="Home">Home</a></div>
-        </li>
-        <li>
-          <div align="left"><a href="user_profile.html"><img src="img/side-navigation-menu_profile.svg" alt="Profile">Profile</a></div>
-        </li>
-        <li>
-          <div align="left"><a href="friends.html"><img src="img/side-navigation-menu_friends.svg" alt="Friends">Friends</a></div>
-        </li>
-        <li>
-          <div align="left"><a href="friend_report.html"><img src="img/side-navigation-menu_messages.svg" alt="Messages">Messages</a></div>
-        </li>
-        <li>
-          <div align="left"></br><a href="settings.html">Settings</a></div>
-        </li>
-      </ul>
-    </nav>
+        <nav>
+        <ul>
+            <li>
+                <div style="text-align: left">
+                    <a href="user_profile.html"><img alt="Profile" src=
+                    "img/profile.svg">Profile</a>
+                </div>
+            </li>
+            <li>
+                <div style="text-align: left">
+                    <a href="friends.html"><img alt="Friends" src=
+                    "img/imgfds.svg">Friends</a>
+                </div>
+            </li>
+            <li>
+                <div style="text-align: left">
+                    <a href="messages.html"><img alt="Messages" src=
+                    "img/imgmsg.svg">Messages</a>
+                </div>
+            </li>
+             <li>
+                <div style="text-align: left">
+                    <a href="settings.html"><img alt="setting" src=
+                    "img/setting.svg">Settings</a>
+                </div>
+            </li>
+        </ul>
+    	</nav>
 	
 	<div class = "main-wrapper">
 		<div id = "topribbon" class="page">
@@ -63,7 +72,7 @@
 		<div id="edit-ribbon" class="page">
 		<p class="first">Edit my profile</p>
 		<div id="form" class="column column-b page">
-        Location: <button type="button" id="location">Add Location</button><br>
+        <button type="button" id="location">Add Location</button><br>
         <div id="locationform">
           <form>
           	<select id="loctype">
@@ -75,10 +84,10 @@
           	<button type="button" id="cancelloc">Cancel</button><br>
           </form>
         </div>
-        Locations entered so far:<br>
+        <br>
         <ul id="locationlist"></ul>
 
-        Education: <button type="button" id="education">Add Education</button><br>
+        <button type="button" id="education">Add Education</button><br>
         <div id="educationform">
           <form>
           	Name of School: <input type="text" id="eduid"><br>
@@ -89,10 +98,10 @@
           	<button type="button" id="canceledu">Cancel</button><br>
           </form>
         </div>
-        Education entered so far:<br>
+        <br>
         <ul id="educationlist"></ul>
 
-        Work: <button type="button" id="work">Add Work</button><br>
+        <button type="button" id="work">Add Work</button><br>
         <div id="workform">
           <form>
           	Work Place: <input type="text" id="workid"><br>
@@ -103,33 +112,34 @@
           	<button type="button" id="cancelwork">Cancel</button><br>
           </form>
         </div>
-        Work entered so far:<br>
+        <br>
         <ul id="worklist"></ul>
 
-        <textarea id="aboutme" rows="4" cols="50">Enter a description of yourself that you want to appear on your profile here...</textarea><br><br>
+        <textarea id="aboutme" rows="4" cols="50" placeholder="Enter a description of yourself that you want to appear on your profile here..."></textarea><br><br>
 
-        <a href="albums.html" id="albumbutton">View Albums</a><br> 
+        <br> 
 
-
-      </div>
-		<div id="pictureforms">
-			<div id="profilepic">
+        <div id="profilepic">
           Change Profile Picture:
-				  <form action="helpers/upload.php" method="post" enctype="multipart/form-data">
-					<input type="hidden" name="Id" id="userId">
-					<input type="file" name="uploadedfile" value="Change Picture"></br>
-					<input type="submit" value="Upload Profile Image">
-				  </form>
-				  <div id="ribbonpic">
-            Change Ribbon Picture:
-				<form action="helpers/uploadRibbon.php" method="post" enctype="multipart/form-data">
-				  <input type="hidden" name="Id" id="ruserid">
-				  <input type="file" name="uploadedfile"></br>
-				  <input type="submit" value="Upload Ribbon Image">
-				</form>
-			</div>
-			</div>			
+          <form action="helpers/upload.php" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="Id" id="userId">
+          <input type="file" name="uploadedfile" value="Change Picture"></br>
+          <input type="submit" value="Upload Image">
+          </form>
+      </div>
+      <div id="ribbonpic">
+        Change Ribbon Picture:
+            <form action="helpers/uploadRibbon.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="Id" id="ruserid">
+            <input type="file" name="uploadedfile"></br>
+            <input type="submit" value="Upload Image">
+            </form>
+      </div>
+    </div>
+      <a href="albums.html" id="albumbutton">View Albums</a>	
 		</div>
+
+
 		</div>
     </div>
   </body>
