@@ -40,6 +40,7 @@ $(document).ready(function() {
                             'circleid': circleid
                         },
                         success: function(data) {
+							$("#circlemembers").empty();
                             console.log(data);
                             var friends = JSON.parse(data);
                             $("#circlemembers").html(friends[0].CircleName);
@@ -135,7 +136,7 @@ $(document).ready(function() {
 						data: {'id': userId, 'name': circlename},
 						success:function(data) {
 							console.log(data);
-							//location.reload();
+							location.reload();
 						},
 						error: function(xhr, desc, err) {
 							//console.log(xhr);

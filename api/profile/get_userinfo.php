@@ -40,7 +40,9 @@
 				$loc_stmt = $conn->prepare($loc_select);
 				$loc_stmt->execute(array($locations[$i]));
 				$loc_return = $loc_stmt->fetchAll(PDO::FETCH_ASSOC);
+				if(count($loc_return)>0){
 				$loc_result[$i] = $loc_return[0]["Status"].": ".$loc_return[0]["Name"];
+				}
 			}
 			$data["LocationIds"] = $loc_result;
 
@@ -51,7 +53,9 @@
 				$edu_stmt = $conn->prepare($edu_select);
 				$edu_stmt->execute(array($educations[$i]));
 				$edu_return = $edu_stmt->fetchAll(PDO::FETCH_ASSOC);
+				if(count($edu_return)>0){
 				$edu_result[$i] = "Studied ".$edu_return[0]["Course"]." at ".$edu_return[0]["Name"].", from ".$edu_return[0]["StartDate"].", until ".$edu_return[0]["EndDate"];
+				}
 			}
 			$data["EducationIds"] = $edu_result;
 
@@ -62,7 +66,9 @@
 				$work_stmt = $conn->prepare($work_select);
 				$work_stmt->execute(array($works[$i]));
 				$work_return = $work_stmt->fetchAll(PDO::FETCH_ASSOC);
-					$work_result[$i] = "Worked as ".$work_return[0]["Position"]." at ".$work_return[0]["Name"]." , from ".$work_return[0]["StartDate"]." , until ".$work_return[0]["EndDate"];
+				if(count($work_return)>0){
+				$work_result[$i] = "Worked as ".$work_return[0]["Position"]." at ".$work_return[0]["Name"]." , from ".$work_return[0]["StartDate"]." , until ".$work_return[0]["EndDate"];
+				}
 			}
 			$data["WorkIds"] = $work_result;
 			

@@ -144,7 +144,7 @@ $(function() {
 					console.log(sessionStorage.getItem('viewId'));
 					window.location.href = "/viewprofile.html";	
                 });
-                $("#main-wrapper").append(ribbon);
+                $("#friends").append(ribbon);
             }
         },
         error: function(xhr, desc, err) {
