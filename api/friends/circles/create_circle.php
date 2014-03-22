@@ -12,7 +12,7 @@
  			$stmt->execute(array($id, $name));		
 			$out = array("circleCreated" => True); 
 			$out['circleid'] = $conn->lastInsertId();
-			$sql_insert = "INSERT INTO circlemembers (CircleId, UserId) VALUES (?,?);";
+			$sql_insert = "INSERT INTO circlemembers (CircleId, UserId, CreationDate) VALUES (?,?, NOW());";
  			$stmt = $conn->prepare($sql_insert);
  			$stmt->execute(array($out['circleid'],$id));		
 			echo json_encode($out);
