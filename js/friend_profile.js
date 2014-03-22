@@ -1,6 +1,6 @@
 $(function() {
 	var userId = sessionStorage.getItem('userId');; 
-	var viewId=sessionStorage.getItem('viewId');
+	var viewId = sessionStorage.getItem('viewId');
 	
 	console.log(viewId);
 	$.ajax({

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var userId = 11; //sessionStorage.getItem('userId');
+		var userId = sessionStorage.getItem('userId');
 	
 	    $.ajax({
         async: false,
@@ -67,8 +67,8 @@ $(document).ready(function() {
                                 });
                                 var ribbon = $('<div/>', {
                                     id: friends[i].Id.toString(),
-                                    class: 'ribbon' //,
-                                    //style: "background-image:url('http://backgrounddesignz.com/wp-content/uploads/2013/12/ws_Minimal_Gray_to_White_Gradient_1920x1200.jpg'); background-size: cover;"
+                                    class: 'ribbon',
+                                    style: "background-image:url('"+friends[i].RibbonPicture+"'); background-size: cover;"
                                 });
                                 ribbonhovertext.append(name);
                                 ribbonhovertext.append(email);
@@ -77,7 +77,7 @@ $(document).ready(function() {
                                 ribbon.append(ribbonhovertext);
                                 var profileimage = $('<div/>', {
                                     class: 'profile-image ribbon-text',
-                                    style: "background-image:url('http://blog.zap2it.com/pop2it/jennifer-lawrence-miss-dior-thumbnail.jpg'); background-size: auto;"
+                                    style: "background-image:url('"+friends[i].ProfilePicture+"'); background-size: auto;"
                                 });
                                 ribbon.append(profileimage);
                                 $("#circlemembers").append(ribbon);
