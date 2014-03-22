@@ -26,6 +26,7 @@ $(function() {
     $('.title').children('h2').html(title);
     $('.larg').empty();
     if(title!="New Message") {
+      $('#newm').hide();
       var type = $(this).data('type');
       var user = $(this).data('title');
       if(type=='Personal') {
