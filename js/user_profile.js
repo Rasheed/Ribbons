@@ -34,7 +34,7 @@ $(function() {
 				aboutme = data.AboutMe;
 				$('#username').html(fname+' '+lname);
 				$('#email').html(email);
-				$('#information').html(bday+"</br>"+gender+"</br>"+aboutme);
+				$('#information').html("Born "+bday+"</br>"+gender+"</br>"+aboutme);
 				$('#gender').html(gender);
 				$('#aboutme').html(aboutme);
 				if(data.hasProfilePic) {
