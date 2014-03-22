@@ -5,3 +5,7 @@
 
 *.log
 >>>>>>> 55297c66eb8e1de474a22befcbaca75a52b49371
+
+*.xml
+
+xml/1.xml
